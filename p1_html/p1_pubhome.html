@@ -1,0 +1,59 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD html 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+   <head>
+      <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"></meta>
+      <title>Phase 1 Check</title>
+      <link rel="stylesheet" type="text/css" href="../p1_css/p1_global.css"></link>
+      <link rel="stylesheet" type="text/css" href="../p1_css/p1_bgs.css"></link>
+      <link rel="stylesheet" type="text/css" href="../p1_css/p1_home.css"></link>
+      <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/container/assets/skins/sam/container.css"></link><script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js"></script><script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/container/container-min.js"></script><script type="text/javascript" src="../p1_js/webtoolkit.aim.js"></script><script type="text/javascript" src="../p1_js/si.files.js"></script><script type="text/javascript" src="../p1_js/p1_global.js"></script></head>
+   <body class="yui-skin-sam"><script type="text/javascript" src="../js/wz_tooltip.js"></script><div id="myOverlay" style="z-index:99999; overflow:visible;">
+         <div id="context_menu_photo" class="context_menu_bg">
+            <div class="tl"><span class="tr"></span><span class="ll"></span><div class="lr">
+                  <div class="content">
+                     <div class="bm_2"></div>
+                     <div id="context_preview_side" class="left"><img id="context_preview_side_img" src="http://www.smilehealth.info/PH01744J.JPG"></img></div>
+                     <div class="left">
+                        <div class="x_round right bm_15" onclick="myOverlay.hide();"></div><a class="context_menu_entry" href="#">Use for display photo</a><a class="context_menu_entry" href="#">See large size</a><a class="context_menu_entry" href="#">Delete</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="context_arrow_rightside"></div>
+      </div><script>var myOverlay = new YAHOO.widget.Overlay("myOverlay");
+        myOverlay.render(); 
+	myOverlay.hide();
+	
+	function show_context_menu(who) {
+	  document.getElementById('context_preview_side_img').src = who.getAttribute('photo_src');
+	  myOverlay.cfg.setProperty('context', [who, 'tr', 'tl']);
+	  myOverlay.show();
+	}
+</script><div id="main">
+         <div id="column_1">
+            <div id="logo"></div>
+            <div style="color:white;">Wash-out Verification System for Clinical Trials</div><a class="right" href="../p1_php/p1_logout.php" style="margin-top:100px; clear:both; font-size:16px;">logout</a><ul id="menu">
+               <li><a class="menu_link" href="../p1_php/p1_admin.php">Home</a></li>
+               <li><a class="menu_link" href="../p1_php/p1_admin.php?section=closed">Closed Studies</a></li>
+               <li><a class="menu_link" href="../p1_php/p1_admin.php?section=active">Active Studies</a></li>
+               <li><a id="selected" class="menu_link" href="../p1_php/p1_admin.php?section=admin_all">View All Studies</a></li>
+               <li><a class="menu_link" href="../p1_php/p1_admin.php?section=remove">Remove a Study</a></li>
+               <li style="padding:0 0 0 0; margin:-4px 0 0 0; width:297px; height:26px; display:block; background-color:#fff"></li>
+            </ul>
+            <div id="content">
+               <div class="left" style="width:25%; margin-bottom:5px;">CRO</div>
+               <div class="left" style="width:30%;">Study #</div>
+               <div class="left">Completion Date</div>
+               <div class="clear"></div>
+               <div class="row">
+                  <div class="left" style="width:25%;">Pracs Institute</div>
+                  <div class="left" style="width:30%;">9283</div>
+                  <div class="left">Active</div>
+                  <div class="right"><a href="javascript:;">Remove study</a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

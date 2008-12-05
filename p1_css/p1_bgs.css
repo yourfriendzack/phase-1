@@ -1,0 +1,53 @@
+.whisq_bg {
+	margin:0 0 27px 0;
+	/*background-color:#666;*/
+}
+.whisq_bg .tl, .lr, .tr, .ll { 
+  background:url(../p1_gfx/whisq_bg.png) no-repeat 
+}
+.whisq_bg .tl, .lr { 
+  position:relative 
+}
+.whisq_bg .tl { 
+  margin-right:22px;
+  margin-bottom:22px;
+  background-position:top left 
+}
+.whisq_bg .lr { 
+  top:22px;left:22px;
+  background-position:bottom right;
+}
+.whisq_bg .tr, .ll { 
+  position:absolute;
+  height:22px;
+  width:22px 
+}
+.whisq_bg .tr { 
+  top:0;
+  right:-22px;
+  background-position:top right 
+}
+.whisq_bg .ll { 
+  bottom:-22px;
+  left:0;background-position:bottom left 
+}
+.whisq_bg .content { 
+  position:relative;
+  top:-14px;
+  left:-11px;
+  padding-top: 1px;
+  
+  clear:both;
+  overflow:hidden;
+  min-height:21px;
+}
+
+
+.popup_bg {
+  position:relative;
+  border: 2px solid #999;
+  background-color:#fff;
+}
+.popup_bg .content {
+  padding:5px 5px 5px 5px;
+}

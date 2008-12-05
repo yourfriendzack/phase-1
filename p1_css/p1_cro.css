@@ -1,0 +1,171 @@
+/********************************************************
+* Add Subject
+********************************************************/
+
+.box_a {
+  border: 2px solid #666;
+  border-bottom: 1px solid #666;
+  width:150px;
+}
+a.box_a_item {
+  border-bottom: 1px solid #666;
+  text-align:center;
+  text-decoration:none;
+  display:block;
+}
+a.box_a_item:hover {
+  background-color:#ddd;
+}
+
+#sub_column_1 {
+float:left;
+width:29%;
+}
+#sub_column_2 {
+float:left;
+width:68%;
+padding:30px 0 0 0;
+}
+
+
+
+#table_box {
+  border: 2px solid #666;
+  width: 100%;
+  height:578px;
+  margin:10px 0 20px 0;
+}
+#table_column_1, #tc_1_title {
+float:left;
+width:5%;
+height:100%;
+border-right: 1px solid #666;
+}
+#table_column_2, #tc_2_title {
+float:left;
+width:30%;
+height:100%;
+border-right: 1px solid #666;
+}
+#table_column_3, #tc_3_title {
+float:left;
+width:30%;
+height:100%;
+border-right: 1px solid #666;
+}
+#table_column_4, #tc_4_title {
+float:left;
+width:25%;
+height:100%;
+border-right: 1px solid #666;
+}
+#table_column_5 {
+float:left;
+width:9%;
+height:100%;
+}
+
+#table_column_2 input, #table_column_3 input {
+  width:94%;
+}
+#table_column_4 input {
+  width:92.5%;
+}
+
+.cell_text {
+ margin:0;
+ /*padding:5px 0 6px 0;*/
+ text-align:center; 
+ font-size:15px;
+ height:30px;
+ line-height:30px;
+}
+/*body:first-of-type .cell_text {
+ height:18px;
+}*/
+
+.cell_input {
+ margin:0;
+ border: none;
+ padding:5px 5px 0px 5px;
+ line-height:25px;
+ height:25px;
+}
+.cell_input:hover {
+ background-color:#ddd;
+}
+.cell_bg_a {
+ background-color:transparent;
+}
+.cell_bg_b {
+ background-color:#d2e3ff;
+}
+.cell_bg_c {
+ background-color:#c6ffd7;
+}
+
+/********************************************************
+* Add Study
+********************************************************/
+.cro_register_content {
+  height:660px;
+}
+.cro_register_content #sub_column_1 {
+float:left;
+width:26%;
+}
+.cro_register_content #sub_column_2 {
+float:left;
+width:52%;
+padding:25px 0 0 0;
+}
+
+#register_study_form div.form_row {
+  clear: both;
+  padding-top: 5px;
+  }
+
+#register_study_form span.label {
+  float: left;
+  width: 100px;
+  text-align: right;
+  }
+
+#register_study_form span.input {
+  float: right;
+  width: 290px;
+  text-align: left;
+  } 
+#register_study_form {
+  width:420px;
+}
+#register_study_form .formi {
+  float:right;
+}
+#register_study_form .forml {
+  float:right;
+  margin:0 20px 0 0;
+}
+#register_study_form .date {
+  width:50px;
+  margin:0 20px 20px 0;
+}
+
+#callContainer_a {
+  margin:0 10px 0 0;
+}
+
+/********************************************************
+* Active Studies
+********************************************************/
+
+.cro_active_content #table_box {
+  width: 300px;
+  height:578px;
+  margin:10px 0 20px 0;
+}
+.cro_active_content #table_column_1 {
+width:100%;
+height:100%;
+border:none;
+}

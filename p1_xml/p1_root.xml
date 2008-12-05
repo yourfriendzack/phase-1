@@ -1,0 +1,15 @@
+<root my_name="Pracs Institute" user_id="5">
+    <section study_number="4">cro_add</section>
+    <cro>Pracs Institute</cro>
+    <cro>Pfizer</cro>
+    <cro>Merck</cro>
+    <study cro="Pracs Institute" status="Active" start_date="Nov. 12 2008" study_id="4" study_number="9283" subjects_screened="24" subjects_added="5"></study>
+    <study cro="Pracs Institute" status="Closed" invoice_status="Invoice SSent" start_date="Nov. 12 2008" closed_date="Nov. 12 2008" study_id="3" study_number="92833" subjects_screened="24" subjects_added="5" invoice_number="457"></study>
+    <study cro="Pfizer" status="Active" start_date="Nov. 12 2008" study_id="8" study_number="90733" subjects_screened="24" subjects_added="5"></study>
+    <study cro="Pfizer" status="Active" start_date="Nov. 12 2008" study_id="7" study_number="007433" subjects_screened="24" subjects_added="5"></study>
+    <study cro="Pfizer" status="Active" start_date="Nov. 12 2008" study_id="6" study_number="907733" subjects_screened="24" subjects_added="5"></study>
+    <study cro="Merck" status="Active" start_date="Nov. 12 2008" study_id="5" study_number="9067733" subjects_screened="24" subjects_added="5"></study>
+    <subject subject_id="4UtjAM" outpatient_date="22" washout_period="yup"></subject>
+    <subject subject_id="4UtjsdfsAM" outpatient_date="22" washout_period="yup"></subject>
+    <subject subject_id="4Utj3234AM" outpatient_date="22" washout_period="yup"></subject>
+</root>

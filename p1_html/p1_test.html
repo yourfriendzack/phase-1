@@ -1,0 +1,108 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD html 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+   <head>
+      <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"></meta>
+      <title>Phase 1 Check</title>
+      <link rel="stylesheet" type="text/css" href="../p1_css/p1_global.css"></link>
+      <link rel="stylesheet" type="text/css" href="../p1_css/p1_bgs.css"></link>
+      <link rel="stylesheet" type="text/css" href="../p1_css/p1_cro.css"></link>
+      <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/container/assets/skins/sam/container.css"></link><script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js"></script><script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/container/container-min.js"></script><script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/animation/animation-min.js"></script><link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/calendar/assets/skins/sam/calendar.css"></link><script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/calendar/calendar-min.js"></script><script type="text/javascript" src="../p1_js/p1_global.js"></script></head>
+   <body class="yui-skin-sam" onclick="//popup('hi there. this is your concious speaking. I like u! But seriously, brush your teeth.')">
+      <div id="popup" style="z-index:99999; overflow:visible;">
+         <div id="popup_bg" class="popup_bg dialog">
+            <div class="content">
+               <div class="t"></div>
+               <div id="popup_text" class="popup_text bold">You have some fields that are not filled out yet.</div><a class="ok_button right" href="javascript:;" onclick="popup_object.hide();">OK</a><div class="clear"></div>
+            </div>
+            <div class="b">
+               <div></div>
+            </div>
+         </div>
+      </div><script>var popup_object = new YAHOO.widget.Overlay("popup");
+    popup_object.render(); 
+    popup_object.hide();
+	
+	function popup(who) {
+	  document.getElementById( 'popup_bg' ).style.left = -( ((document.getElementById( 'popup_bg' ).offsetWidth + 6) - who.offsetWidth) / 2 ) + 'px';
+	  document.getElementById( 'popup_bg' ).style.top = '-10px';
+	  popup_object.cfg.setProperty('context', [who, 'bl', 'tl']);
+	  popup_object.show();
+	}
+</script><div id="main">
+         <div id="column_1">
+            <div id="logo"></div>
+            <div style="color:white;">Wash-out Verification System for Clinical Trials</div>
+            <div id="tab_b"><a href="../p1_php/p1_logout.php">Logout</a></div>
+            <div id="tab_a"><a href="javascript:;">Profile</a></div>
+            <ul id="menu">
+               <li><a class="menu_link cro" href="../p1_php/p1_cro.php">Home</a></li>
+               <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_screen">Screen New Subjects(s)</a></li>
+               <li><a id="selected" class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_add">Add Subjects(s) to Database</a></li>
+               <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_database">Database Actions</a></li>
+               <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_register">Register a New Study</a></li>
+               <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_active">Active Studies</a></li>
+               <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_close">Close a Study</a></li>
+            </ul>
+            <div id="content">
+               <div id="sub_column_1">
+                  <div class="bold bm_30" style="margin-top:30px">Welcome, Pracs Institute.</div>
+                  <div class="bm_20"><span class="mini_title">Study # </span><span style="color:#ff55ff">9283</span></div>
+                  <div class="bm_20"><span class="mini_title">Study Leader </span><span class="color_555"></span></div>
+                  <div class="bm_20"><span class="mini_title">Sponsor </span><span class="color_555"></span></div>
+                  <div class="bm_20"><span class="mini_title">Drug </span><span class="color_555"></span></div>
+                  <div class="bm_20"><span class="mini_title">Study Dates </span><div><span class="color_555">Nov. 12 2008 - </span></div>
+                  </div>
+               </div>
+               <div id="sub_column_2">
+                  <div id="table_data" class="nodisp" row_quantity="19"></div>
+                  <div id="tc_1_title" style="color:#fff; border:none;">
+                     aa
+                     
+                  </div>
+                  <div id="tc_2_title" style="border:none;">
+                     <div class="italic color_000" style="text-align:center;">Subject</div>
+                  </div>
+                  <div id="tc_3_title" style="border:none;">
+                     <div class="italic color_000" style="text-align:center;">Out-Patient Date</div>
+                  </div>
+                  <div id="tc_4_title" style="border:none;">
+                     <div class="italic color_000" style="text-align:center;">Washout</div>
+                  </div>
+                  <div class="clear"></div>
+                  <div id="table_box">
+                     <div id="table_column_1">
+                        <div id="column_1_1" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="18">1</div>
+                        <div id="column_1_2" class="cell_text" oninit="new_row_array(this)" row_quantity="18">2</div>
+                        <div id="column_1_3" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="18">3</div>
+                        <div id="column_1_4" class="cell_text" oninit="new_row_array(this)" row_quantity="18">4</div>
+                        <div id="column_1_5" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="18">5</div>
+                        <div id="column_1_6" class="cell_text" oninit="new_row_array(this)" row_quantity="18">6</div>
+                        <div id="column_1_7" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="18">7</div>
+                        <div id="column_1_8" class="cell_text" oninit="new_row_array(this)" row_quantity="18">8</div>
+                        <div id="column_1_9" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="18">9</div>
+                        <div id="column_1_10" class="cell_text" oninit="new_row_array(this)" row_quantity="18">10</div>
+                        <div id="column_1_11" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="18">11</div>
+                        <div id="column_1_12" class="cell_text" oninit="new_row_array(this)" row_quantity="18">12</div>
+                        <div id="column_1_13" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="18">13</div>
+                        <div id="column_1_14" class="cell_text" oninit="new_row_array(this)" row_quantity="18">14</div>
+                        <div id="column_1_15" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="18">15</div>
+                        <div id="column_1_16" class="cell_text" oninit="new_row_array(this)" row_quantity="18">16</div>
+                        <div id="column_1_17" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="18">17</div>
+                        <div id="column_1_18" class="cell_text" oninit="new_row_array(this)" row_quantity="18">18</div>
+                        <div id="column_1_19" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="18">19</div>
+                     </div>
+                     <div id="table_column_2"><input id="column_2_1" class="cell_input cell_bg_b" type="text" row="1"></input><input id="column_2_2" class="cell_input" type="text" row="2"></input><input id="column_2_3" class="cell_input cell_bg_b" type="text" row="3"></input><input id="column_2_4" class="cell_input" type="text" row="4"></input><input id="column_2_5" class="cell_input cell_bg_b" type="text" row="5"></input><input id="column_2_6" class="cell_input" type="text" row="6"></input><input id="column_2_7" class="cell_input cell_bg_b" type="text" row="7"></input><input id="column_2_8" class="cell_input" type="text" row="8"></input><input id="column_2_9" class="cell_input cell_bg_b" type="text" row="9"></input><input id="column_2_10" class="cell_input" type="text" row="10"></input><input id="column_2_11" class="cell_input cell_bg_b" type="text" row="11"></input><input id="column_2_12" class="cell_input" type="text" row="12"></input><input id="column_2_13" class="cell_input cell_bg_b" type="text" row="13"></input><input id="column_2_14" class="cell_input" type="text" row="14"></input><input id="column_2_15" class="cell_input cell_bg_b" type="text" row="15"></input><input id="column_2_16" class="cell_input" type="text" row="16"></input><input id="column_2_17" class="cell_input cell_bg_b" type="text" row="17"></input><input id="column_2_18" class="cell_input" type="text" row="18"></input><input id="column_2_19" class="cell_input cell_bg_b" type="text" row="19"></input></div>
+                     <div id="table_column_3"><input id="column_3_1" class="cell_input cell_bg_b" type="text" row="1"></input><input id="column_3_2" class="cell_input cell_bg_a" type="text" row="2"></input><input id="column_3_3" class="cell_input cell_bg_b" type="text" row="3"></input><input id="column_3_4" class="cell_input cell_bg_a" type="text" row="4"></input><input id="column_3_5" class="cell_input cell_bg_b" type="text" row="5"></input><input id="column_3_6" class="cell_input cell_bg_a" type="text" row="6"></input><input id="column_3_7" class="cell_input cell_bg_b" type="text" row="7"></input><input id="column_3_8" class="cell_input cell_bg_a" type="text" row="8"></input><input id="column_3_9" class="cell_input cell_bg_b" type="text" row="9"></input><input id="column_3_10" class="cell_input cell_bg_a" type="text" row="10"></input><input id="column_3_11" class="cell_input cell_bg_b" type="text" row="11"></input><input id="column_3_12" class="cell_input cell_bg_a" type="text" row="12"></input><input id="column_3_13" class="cell_input cell_bg_b" type="text" row="13"></input><input id="column_3_14" class="cell_input cell_bg_a" type="text" row="14"></input><input id="column_3_15" class="cell_input cell_bg_b" type="text" row="15"></input><input id="column_3_16" class="cell_input cell_bg_a" type="text" row="16"></input><input id="column_3_17" class="cell_input cell_bg_b" type="text" row="17"></input><input id="column_3_18" class="cell_input cell_bg_a" type="text" row="18"></input><input id="column_3_19" class="cell_input cell_bg_b" type="text" row="19"></input></div>
+                     <div id="table_column_4"><input id="column_4_1" class="cell_input cell_bg_b" type="text" row="1"></input><input id="column_4_2" class="cell_input" type="text" row="2"></input><input id="column_4_3" class="cell_input cell_bg_b" type="text" row="3"></input><input id="column_4_4" class="cell_input" type="text" row="4"></input><input id="column_4_5" class="cell_input cell_bg_b" type="text" row="5"></input><input id="column_4_6" class="cell_input" type="text" row="6"></input><input id="column_4_7" class="cell_input cell_bg_b" type="text" row="7"></input><input id="column_4_8" class="cell_input" type="text" row="8"></input><input id="column_4_9" class="cell_input cell_bg_b" type="text" row="9"></input><input id="column_4_10" class="cell_input" type="text" row="10"></input><input id="column_4_11" class="cell_input cell_bg_b" type="text" row="11"></input><input id="column_4_12" class="cell_input" type="text" row="12"></input><input id="column_4_13" class="cell_input cell_bg_b" type="text" row="13"></input><input id="column_4_14" class="cell_input" type="text" row="14"></input><input id="column_4_15" class="cell_input cell_bg_b" type="text" row="15"></input><input id="column_4_16" class="cell_input" type="text" row="16"></input><input id="column_4_17" class="cell_input cell_bg_b" type="text" row="17"></input><input id="column_4_18" class="cell_input" type="text" row="18"></input><input id="column_4_19" class="cell_input cell_bg_b" type="text" row="19"></input></div>
+                     <div id="table_column_5">
+                        <div id="column_5_1" class="nodisp" type="text" style="width:95%" row="1"></div><script>new_cell(document.getElementById('column_5_1'))</script><div id="column_5_2" class="nodisp" type="text" style="width:95%" row="2"></div><script>new_cell(document.getElementById('column_5_2'))</script><div id="column_5_3" class="nodisp" type="text" style="width:95%" row="3"></div><script>new_cell(document.getElementById('column_5_3'))</script><div id="column_5_4" class="nodisp" type="text" style="width:95%" row="4"></div><script>new_cell(document.getElementById('column_5_4'))</script><div id="column_5_5" class="nodisp" type="text" style="width:95%" row="5"></div><script>new_cell(document.getElementById('column_5_5'))</script><div id="column_5_6" class="nodisp" type="text" style="width:95%" row="6"></div><script>new_cell(document.getElementById('column_5_6'))</script><div id="column_5_7" class="nodisp" type="text" style="width:95%" row="7"></div><script>new_cell(document.getElementById('column_5_7'))</script><div id="column_5_8" class="nodisp" type="text" style="width:95%" row="8"></div><script>new_cell(document.getElementById('column_5_8'))</script><div id="column_5_9" class="nodisp" type="text" style="width:95%" row="9"></div><script>new_cell(document.getElementById('column_5_9'))</script><div id="column_5_10" class="nodisp" type="text" style="width:95%" row="10"></div><script>new_cell(document.getElementById('column_5_10'))</script><div id="column_5_11" class="nodisp" type="text" style="width:95%" row="11"></div><script>new_cell(document.getElementById('column_5_11'))</script><div id="column_5_12" class="nodisp" type="text" style="width:95%" row="12"></div><script>new_cell(document.getElementById('column_5_12'))</script><div id="column_5_13" class="nodisp" type="text" style="width:95%" row="13"></div><script>new_cell(document.getElementById('column_5_13'))</script><div id="column_5_14" class="nodisp" type="text" style="width:95%" row="14"></div><script>new_cell(document.getElementById('column_5_14'))</script><div id="column_5_15" class="nodisp" type="text" style="width:95%" row="15"></div><script>new_cell(document.getElementById('column_5_15'))</script><div id="column_5_16" class="nodisp" type="text" style="width:95%" row="16"></div><script>new_cell(document.getElementById('column_5_16'))</script><div id="column_5_17" class="nodisp" type="text" style="width:95%" row="17"></div><script>new_cell(document.getElementById('column_5_17'))</script><div id="column_5_18" class="nodisp" type="text" style="width:95%" row="18"></div><script>new_cell(document.getElementById('column_5_18'))</script><div id="column_5_19" class="nodisp" type="text" style="width:95%" row="19"></div><script>new_cell(document.getElementById('column_5_19'))</script></div>
+                  </div><input id="submit_subjects_button" class="right" type="button" value="Submit" onclick="my_submit('add_subject', 5, 9283)"></input><input id="add_row_button" class="" type="button" value="+ add another row" onclick="new_row();"></input></div>
+               <div class="clear"></div>
+            </div>
+            <div style="color:#000">Copyright Phase-1 Check.com. All rights reserved.</div>
+         </div>
+      </div>
+   </body>
+</html>
