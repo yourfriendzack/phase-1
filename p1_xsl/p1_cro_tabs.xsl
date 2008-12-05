@@ -358,6 +358,7 @@
   
   <xsl:template match="/root" name="view_active">
     <div id="sub_column_1">
+      
       <div class="bold bm_30" style="margin-top:30px">Welcome, <xsl:value-of select="@my_name"/>.</div>
          <xsl:choose>
             <xsl:when test="study">
@@ -371,7 +372,8 @@
             <xsl:otherwise>
               There are no studies which match your account.
             </xsl:otherwise>
-          </xsl:choose>
+         </xsl:choose>
+      
     </div>
     
     <div id="sub_column_2">
@@ -435,8 +437,42 @@
     </ul>
     
     
-    <div id="content" class="cro_active_content">
-      So...you want to close a study?
+    <div id="content">
+      <xsl:choose>
+      <xsl:when test="section/@study_number and section/@study_number != '' and section/@study_number != ' '">
+          
+          <!--<xsl:call-template name="view_active"/>-->
+          
+        </xsl:when>
+        
+        <xsl:otherwise>
+          <div id="sub_column_1">
+            
+            <div class="bold bm_30" style="margin-top:30px">Welcome, <xsl:value-of select="@my_name"/>.</div>
+          
+          <xsl:choose>
+            <xsl:when test="study">
+              <div class="bm_10">Please select a study to close.</div>
+              <div class="box_a">
+                <xsl:for-each select="study">
+                  <a class="box_a_item" href="../p1_php/p1_cro.php?section=cro_add&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a>
+                </xsl:for-each>
+              </div>
+            </xsl:when>
+            <xsl:otherwise>
+              There are no studies which match your account.
+            </xsl:otherwise>
+          </xsl:choose>
+            
+          </div>
+          <div id="sub_column_2">
+            
+            
+          </div>
+          
+        </xsl:otherwise>
+      </xsl:choose>
+      
     </div>
     
   </xsl:template>
