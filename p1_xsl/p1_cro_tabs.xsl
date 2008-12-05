@@ -195,7 +195,9 @@
     <xsl:param name="num">1</xsl:param> <!-- param has initial value of 1 -->
     <xsl:if test="not($num = $row_quantity + 1)">
       
-      <div id="column_5_{$num}" class="nodisp" style="width:100%" row="{$num}">
+      <div id="column_5_{$num}" class="" style="width:100%; height:30px; padding:0 0 0 5px;" row="{$num}">
+        
+          <img src="../p1_gfx/circle.png"/>
         
         
       </div>
