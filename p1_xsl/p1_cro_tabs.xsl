@@ -196,8 +196,9 @@
     <xsl:if test="not($num = $row_quantity + 1)">
       
       <div id="column_5_{$num}" class="" style="width:100%; height:30px; padding:0 0 0 5px;" row="{$num}">
-        
-          <img src="../p1_gfx/circle.png"/>
+        <a href="javascript:;">
+          <img my_name="img" src="../p1_gfx/circle.png"/>
+        </a>
         
         
       </div>
@@ -358,44 +359,64 @@
   <xsl:template match="/root" name="view_active">
     <div id="sub_column_1">
       <div class="bold bm_30" style="margin-top:30px">Welcome, <xsl:value-of select="@my_name"/>.</div>
-      <div class="bm_20"><span class="mini_title">Study # </span><span style="color:#ff55ff"><xsl:value-of select="study/@study_number"/></span></div>
-      <div class="bm_20"><span class="mini_title">Study Leader </span><span class="color_555"><xsl:value-of select="study/@study_leader"/></span></div>
-      <div class="bm_20"><span class="mini_title">Sponsor </span><span class="color_555"><xsl:value-of select="study/@sponsor"/></span></div>
-      <div class="bm_20"><span class="mini_title">Drug </span><span class="color_555"><xsl:value-of select="study/@drug"/></span></div>
-      <div class="bm_20"><span class="mini_title">Study Dates </span><div><span class="color_555"><xsl:value-of select="study/@start_date"/> - <xsl:value-of select="study/@end_date"/></span></div></div>
+         <xsl:choose>
+            <xsl:when test="study">
+              <div class="bm_10">View Study Detail</div>
+              <div class="box_a">
+                <xsl:for-each select="study">
+                  <a class="box_a_item" href="../p1_php/p1_cro.php?section=cro_add&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a>
+                </xsl:for-each>
+              </div>
+            </xsl:when>
+            <xsl:otherwise>
+              There are no studies which match your account.
+            </xsl:otherwise>
+          </xsl:choose>
     </div>
     
     <div id="sub_column_2">
-      <div id="table_data" class="nodisp" row_quantity="{$row_quantity}"/>
-      
-      <div id="tc_1_title" style="color:#fff; border:none;">
-        aa
-      </div>
-      <div id="tc_2_title" style="border:none;">
-        <div class="italic color_000" style="text-align:center;">Subject</div>
-      </div>
-      <div id="tc_3_title" style="border:none;">
-        <div class="italic color_000" style="text-align:center;">Out-Patient Date</div>
-      </div>
-      <div id="tc_4_title" style="border:none;">
-        <div class="italic color_000" style="text-align:center;">Washout</div>
-      </div>
-      
-      <div class="clear"/>
-      
-      <div id="table_box">
+      <h2 class="bm_30" style="margin-left:40px;">View Study Detail</h2>
+      <h1 class="bm_30" style="margin-left:40px;"><xsl:value-of select="@my_name"/></h1>
+        <div class="bm_10" style="margin-left:40px;">Please enter study information.</div>
         
-        <div id="table_column_1">
+        <form id="view_study_form">
+          <div class="form_row">
+            <span class="label">Study Number</span>
+            <span class="input"><input id="study_number" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@study_number}" /></span>
+          </div>
+          <div class="form_row">
+            <span class="label">Study Leader</span>
+            <span class="input"><input id="study_leader" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@study_leader}" /></span>
+          </div>
+          <div class="form_row">
+            <span class="label">Sponsor</span>
+            <span class="input"><input id="sponsor" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@sponsor}" /></span>
+          </div>
+          <div class="form_row">
+            <span class="label">Drug</span>
+            <span class="input"><input id="drug" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@drug}" /></span>
+          </div>
+          <div class="form_row">
+            <span class="label">Target Enrollment</span>
+            <span class="input"><input id="drug" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@target_enrollment}" /></span>
+          </div>
+          <div class="form_row bm_30">
+            <span class="label">Subject Compensation</span>
+            <span class="input"><input id="subject_compensation" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@subject_compensation}" /></span>
+          </div>
           
-          <xsl:call-template name="recurse_till_ten"/>
+          <div class="clear bm_20"/>
           
-        </div>
+          <button class="right" onclick="my_submit('edit_study', {@user_id})">Submit</button>
+          
+          <div class="clear"/>
+          
+        </form>
         
-      </div>
       
-      <input id="submit_subjects_button" class="right" type="button" value="Submit" onclick="my_submit('add_subject', {/root/@user_id}, {/root/study/@study_number})"/>
-      <input id="add_row_button" class="" type="button" value="+ add another row" onclick="new_row();"/>
+      
     </div>
+    
     <div class="clear"/>
   
   </xsl:template>
