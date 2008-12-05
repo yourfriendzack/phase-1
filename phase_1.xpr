@@ -6,45 +6,392 @@
         <options/>
     </meta>
     <projectTree name="phase_1.xpr">
-        <folder name="p1_css">
-            <file name="p1_css/p1_bgs.css"/>
-            <file name="../phase_1/p1_css/p1_cro.css"/>
-            <file name="p1_css/p1_global.css"/>
-            <file name="p1_css/p1_home.css"/>
-            <file name="p1_css/p1_login.css"/>
-        </folder>
-        <folder name="p1_gfx">
-            <file name="p1_gfx/bg_gradient.png"/>
-            <file name="p1_gfx/logo.png"/>
-            <file name="p1_gfx/p1_accessories.psd"/>
-            <file name="p1_gfx/p1_front.psd"/>
-            <file name="p1_gfx/p1_png_preview.png"/>
-            <file name="p1_gfx/snowy.png"/>
-            <file name="p1_gfx/square_tile.png"/>
-            <file name="p1_gfx/whisq_bg.png"/>
-        </folder>
-        <folder name="p1_html">
-            <file name="p1_html/p1_test.html"/>
-        </folder>
-        <folder name="p1_js">
-            <file name="p1_js/p1_global.js"/>
-        </folder>
-        <folder name="p1_xml">
-            <file name="p1_xml/p1_root.xml"/>
-        </folder>
-        <folder name="p1_xsl">
-            <file name="p1_xsl/p1_add_subject.xsl"/>
-            <file name="../phase_1/p1_xsl/p1_admin.xsl"/>
-            <file name="../phase_1/p1_xsl/p1_admin_all.xsl"/>
-            <file name="../phase_1/p1_xsl/p1_cro_tabs.xsl"/>
-            <file name="../phase_1/p1_xsl/p1_cro.xsl"/>
-            <file name="p1_xsl/p1_edit_profile.xsl"/>
-            <file name="p1_xsl/p1_home.xsl"/>
-            <file name="../phase_1/p1_xsl/p1_invalid.xsl"/>
-            <file name="p1_xsl/p1_login.xsl"/>
-            <file name="p1_xsl/p1_logout.xsl"/>
-            <file name="p1_xsl/p1_register_study.xsl"/>
-            <file name="p1_xsl/p1_remove_study.xsl"/>
+        <folder name="phase-1">
+            <folder name=".git">
+                <folder name="branches"/>
+                <folder name="hooks">
+                    <file name=".git/hooks/applypatch-msg"/>
+                    <file name=".git/hooks/commit-msg"/>
+                    <file name=".git/hooks/post-commit"/>
+                    <file name=".git/hooks/post-receive"/>
+                    <file name=".git/hooks/post-update"/>
+                    <file name=".git/hooks/pre-applypatch"/>
+                    <file name=".git/hooks/pre-commit"/>
+                    <file name=".git/hooks/prepare-commit-msg"/>
+                    <file name=".git/hooks/pre-rebase"/>
+                    <file name=".git/hooks/update"/>
+                </folder>
+                <folder name="info">
+                    <file name=".git/info/exclude"/>
+                </folder>
+                <folder name="logs">
+                    <folder name="refs">
+                        <folder name="heads">
+                            <file name=".git/logs/refs/heads/master"/>
+                        </folder>
+                        <folder name="remotes">
+                            <folder name="origin">
+                                <file
+                                    name=".git/logs/refs/remotes/origin/master"
+                                />
+                            </folder>
+                        </folder>
+                    </folder>
+                    <file name=".git/logs/HEAD"/>
+                </folder>
+                <folder name="objects">
+                    <folder name="02">
+                        <file
+                            name=".git/objects/02/97be998874eba81e1cfb0596a8403ebbf12677"
+                        />
+                    </folder>
+                    <folder name="03">
+                        <file
+                            name=".git/objects/03/9cc5ef1f2da61b60f0abc9b9e34df2b210c05a"
+                        />
+                    </folder>
+                    <folder name="10">
+                        <file
+                            name=".git/objects/10/1dcc702c6d5147f53984a2224d9bc7490853ea"
+                        />
+                    </folder>
+                    <folder name="14">
+                        <file
+                            name=".git/objects/14/ed9c833ec88960aa114397919fd267bf164502"
+                        />
+                    </folder>
+                    <folder name="1a">
+                        <file
+                            name=".git/objects/1a/0fd3c66745503f8fc88d1195062e8d469fdf59"
+                        />
+                    </folder>
+                    <folder name="1c">
+                        <file
+                            name=".git/objects/1c/83109b879ff124b484211cc69bad0c95532332"
+                        />
+                    </folder>
+                    <folder name="1e">
+                        <file
+                            name=".git/objects/1e/3377072cdd9c0b68fd7b6f43120ba1a7cd4dde"
+                        />
+                    </folder>
+                    <folder name="1f">
+                        <file
+                            name=".git/objects/1f/53e862ae126b3722e6aca64f85efd502d57df8"
+                        />
+                    </folder>
+                    <folder name="22">
+                        <file
+                            name=".git/objects/22/5682a1ff757cb8a77a8a538838a3ffb083d790"
+                        />
+                    </folder>
+                    <folder name="28">
+                        <file
+                            name=".git/objects/28/55506eb824e22694a620fe28f3073df94c585e"/>
+                        <file
+                            name=".git/objects/28/c97c48d3dedec21b0f6ea489e67850bca41ee9"
+                        />
+                    </folder>
+                    <folder name="2c">
+                        <file
+                            name=".git/objects/2c/8d98047ad61427a2fdd42c6b8338e408cbbf07"
+                        />
+                    </folder>
+                    <folder name="2f">
+                        <file
+                            name=".git/objects/2f/b970a71937526af649c987ffdd4cb7ff6e8ea1"
+                        />
+                    </folder>
+                    <folder name="32">
+                        <file
+                            name=".git/objects/32/7ab825b41d871906179b0c7cffd89273d89244"
+                        />
+                    </folder>
+                    <folder name="33">
+                        <file
+                            name=".git/objects/33/3d94ed963254881865dbed0c2dc514c5f1f1b7"
+                        />
+                    </folder>
+                    <folder name="38">
+                        <file
+                            name=".git/objects/38/02f4f4cd94f0dc664df7d44a436d31d5de95ee"
+                        />
+                    </folder>
+                    <folder name="39">
+                        <file
+                            name=".git/objects/39/7027581f54db8f8966284426ff47d6867f453c"/>
+                        <file
+                            name=".git/objects/39/70bf9f0c9a564bfce6678ed2308f8ec45fb3d0"
+                        />
+                    </folder>
+                    <folder name="3b">
+                        <file
+                            name=".git/objects/3b/429599a09d44afd642f81b97e192552e5564c3"
+                        />
+                    </folder>
+                    <folder name="44">
+                        <file
+                            name=".git/objects/44/a6a2b5883821c98569eb690204ffcf7b4d3ad5"
+                        />
+                    </folder>
+                    <folder name="68">
+                        <file
+                            name=".git/objects/68/ef01abd82e1fa273bad9b0d9cd60430c8f6c5e"
+                        />
+                    </folder>
+                    <folder name="6e">
+                        <file
+                            name=".git/objects/6e/4d5820f70fec588320ac20a792a694521be930"
+                        />
+                    </folder>
+                    <folder name="6f">
+                        <file
+                            name=".git/objects/6f/24a06dd6ab0373eccb099539c7a7cb203063f9"
+                        />
+                    </folder>
+                    <folder name="72">
+                        <file
+                            name=".git/objects/72/62fb76d845b301eb1613fd45295bacff00fb8d"
+                        />
+                    </folder>
+                    <folder name="76">
+                        <file
+                            name=".git/objects/76/c50bed5654eea2141feef5a0cf218449868975"
+                        />
+                    </folder>
+                    <folder name="79">
+                        <file
+                            name=".git/objects/79/8baa44904c966c74982ab55e35fc9f285fd3a4"
+                        />
+                    </folder>
+                    <folder name="7a">
+                        <file
+                            name=".git/objects/7a/8e02e7e79ab7a9b5a410e976fae77a5c98ea87"
+                        />
+                    </folder>
+                    <folder name="82">
+                        <file
+                            name=".git/objects/82/c895ecac0a6f7a3fdea4d479e571a67ed72239"
+                        />
+                    </folder>
+                    <folder name="8a">
+                        <file
+                            name=".git/objects/8a/fda8358e279b6b03b06bfd79974cb345fa987a"
+                        />
+                    </folder>
+                    <folder name="8b">
+                        <file
+                            name=".git/objects/8b/f8ebebba1a72d52c3fe78f85c8d9cf479c769d"
+                        />
+                    </folder>
+                    <folder name="91">
+                        <file
+                            name=".git/objects/91/5514ebb5ee66e3798d18ac4c9efed6778ec02f"
+                        />
+                    </folder>
+                    <folder name="95">
+                        <file
+                            name=".git/objects/95/093a0d58c577c6bbafc54ada02c21904822d3f"/>
+                        <file
+                            name=".git/objects/95/2d187e8e3adabffb6b61db525f9766020f6ceb"
+                        />
+                    </folder>
+                    <folder name="97">
+                        <file
+                            name=".git/objects/97/13362fc3e0fe8eddb9fe32896a2df3b23a0883"/>
+                        <file
+                            name=".git/objects/97/3fd7bd6f3891e56e1fe53c115380127f644769"
+                        />
+                    </folder>
+                    <folder name="9b">
+                        <file
+                            name=".git/objects/9b/8402d52018b48189d06a6baae458c106579fcb"
+                        />
+                    </folder>
+                    <folder name="9f">
+                        <file
+                            name=".git/objects/9f/dd29c56d23353c6532f5c97cbf117cee7e318c"
+                        />
+                    </folder>
+                    <folder name="a3">
+                        <file
+                            name=".git/objects/a3/cfd7762dfd0cc4fade22ca8c9f4d26a437e62b"
+                        />
+                    </folder>
+                    <folder name="a5">
+                        <file
+                            name=".git/objects/a5/7671569de001035ec607d435dcd1c9988e3cad"
+                        />
+                    </folder>
+                    <folder name="a9">
+                        <file
+                            name=".git/objects/a9/735db6700f599b1743c26696bd2d7784c4fca5"
+                        />
+                    </folder>
+                    <folder name="ae">
+                        <file
+                            name=".git/objects/ae/1546a8d20ad915509b8216db87a45a73aa228c"
+                        />
+                    </folder>
+                    <folder name="b1">
+                        <file
+                            name=".git/objects/b1/40c3e20fbd8fc3f4621257fb5e67bf316be891"
+                        />
+                    </folder>
+                    <folder name="b2">
+                        <file
+                            name=".git/objects/b2/9cd3c5eb593b2e3bf072fa3f4da1a10d5e7245"
+                        />
+                    </folder>
+                    <folder name="b5">
+                        <file
+                            name=".git/objects/b5/c2d53b1559caab47856c7c3a42daafb3fcaf12"
+                        />
+                    </folder>
+                    <folder name="b6">
+                        <file
+                            name=".git/objects/b6/5308c13f3becc3cec077ac020b8aac30283c5e"/>
+                        <file
+                            name=".git/objects/b6/f08c9773ff1846b9f43ac5768d260ce9cfffb1"
+                        />
+                    </folder>
+                    <folder name="b9">
+                        <file
+                            name=".git/objects/b9/8c9cea92a643f72655060d852a10931dd2b23a"/>
+                        <file
+                            name=".git/objects/b9/f67e0e29c50cdd6954780670b78aca3365cd8e"
+                        />
+                    </folder>
+                    <folder name="c0">
+                        <file
+                            name=".git/objects/c0/ee1baaa6ff509124b674b061ed4273100a4e80"
+                        />
+                    </folder>
+                    <folder name="c2">
+                        <file
+                            name=".git/objects/c2/b9e78c719f6e5c3192c6c0ad5499848735dfd6"
+                        />
+                    </folder>
+                    <folder name="ca">
+                        <file
+                            name=".git/objects/ca/5e8e4a967049f8833f9dab9a163f0ba55b2a84"/>
+                        <file
+                            name=".git/objects/ca/8dfb8bdf44fa524e93123209ea2df7255236e2"
+                        />
+                    </folder>
+                    <folder name="cd">
+                        <file
+                            name=".git/objects/cd/511fd0fb8714deba38656bb388ded0d6aa7263"
+                        />
+                    </folder>
+                    <folder name="d3">
+                        <file
+                            name=".git/objects/d3/79faec1b9f718f4e3444e37cd4207967829bcf"
+                        />
+                    </folder>
+                    <folder name="e6">
+                        <file
+                            name=".git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+                        />
+                    </folder>
+                    <folder name="e7">
+                        <file
+                            name=".git/objects/e7/c4a2f383f102215f6adbceb90f0b6722af9570"
+                        />
+                    </folder>
+                    <folder name="e9">
+                        <file
+                            name=".git/objects/e9/29d90fee8b4d1d9730709840867085e51623fd"
+                        />
+                    </folder>
+                    <folder name="fb">
+                        <file
+                            name=".git/objects/fb/6e8acbddaaedfd5056c51c78e4ae4dc379f99b"/>
+                        <file
+                            name=".git/objects/fb/d43fab62dbbbc756af816b780125532d147ca8"
+                        />
+                    </folder>
+                    <folder name="ff">
+                        <file
+                            name=".git/objects/ff/ed233b9579ac501062ebff347fde8145c7b18b"
+                        />
+                    </folder>
+                    <folder name="info"/>
+                    <folder name="pack"/>
+                </folder>
+                <folder name="refs">
+                    <folder name="heads">
+                        <file name=".git/refs/heads/master"/>
+                    </folder>
+                    <folder name="remotes">
+                        <folder name="origin">
+                            <file name=".git/refs/remotes/origin/master"
+                            />
+                        </folder>
+                    </folder>
+                    <folder name="tags"/>
+                </folder>
+                <file name=".git/COMMIT_EDITMSG"/>
+                <file name=".git/config"/>
+                <file name=".git/description"/>
+                <file name=".git/HEAD"/>
+                <file name=".git/index"/>
+            </folder>
+            <folder name="p1_css">
+                <file name="p1_css/.DS_Store"/>
+                <file name="p1_css/p1_bgs.css"/>
+                <file name="p1_css/p1_cro.css"/>
+                <file name="p1_css/p1_global.css"/>
+                <file name="p1_css/p1_home.css"/>
+                <file name="p1_css/p1_login.css"/>
+            </folder>
+            <folder name="p1_gfx">
+                <file name="p1_gfx/bg_gradient.png"/>
+                <file name="p1_gfx/check.png"/>
+                <file name="p1_gfx/circle.png"/>
+                <file name="p1_gfx/logo.png"/>
+                <file name="p1_gfx/p1_accessories.psd"/>
+                <file name="p1_gfx/p1_front.psd"/>
+                <file name="p1_gfx/p1_png_preview.png"/>
+                <file name="p1_gfx/snowy.png"/>
+                <file name="p1_gfx/square_tile.png"/>
+                <file name="p1_gfx/tab_a.png"/>
+                <file name="p1_gfx/tab_b.png"/>
+                <file name="p1_gfx/whisq_bg.png"/>
+                <file name="p1_gfx/x.png"/>
+            </folder>
+            <folder name="p1_html">
+                <file name="p1_html/.DS_Store"/>
+                <file name="p1_html/p1_pubhome.html"/>
+                <file name="p1_html/p1_test.html"/>
+            </folder>
+            <folder name="p1_js">
+                <file name="p1_js/p1_global.js"/>
+                <file name="p1_js/php_md5.min.js"/>
+                <file name="p1_js/php_utf8_encode.min.js"/>
+            </folder>
+            <folder name="p1_xml">
+                <file name="p1_xml/p1_root.xml"/>
+            </folder>
+            <folder name="p1_xsl">
+                <file name="p1_xsl/.DS_Store"/>
+                <file name="p1_xsl/p1_add_subject.xsl"/>
+                <file name="p1_xsl/p1_admin_all.xsl"/>
+                <file name="p1_xsl/p1_admin.xsl"/>
+                <file name="p1_xsl/p1_cro_tabs.xsl"/>
+                <file name="p1_xsl/p1_cro.xsl"/>
+                <file name="p1_xsl/p1_edit_profile.xsl"/>
+                <file name="p1_xsl/p1_home.xsl"/>
+                <file name="p1_xsl/p1_invalid.xsl"/>
+                <file name="p1_xsl/p1_login.xsl"/>
+                <file name="p1_xsl/p1_logout.xsl"/>
+                <file name="p1_xsl/p1_register_study.xsl"/>
+                <file name="p1_xsl/p1_remove_study.xsl"/>
+                <file name="p1_xsl/p1_screen_new.xsl"/>
+            </folder>
+            <file name=".DS_Store"/>
+            <file name="phase_1.xpr"/>
+            <file name="README"/>
         </folder>
     </projectTree>
 </project>

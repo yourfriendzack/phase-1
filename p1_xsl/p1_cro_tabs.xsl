@@ -193,10 +193,12 @@
   
   <xsl:template name="table_column_5">
     <xsl:param name="num">1</xsl:param> <!-- param has initial value of 1 -->
-    <xsl:if test="not($num = 20)">
+    <xsl:if test="not($num = $row_quantity + 1)">
       
-      <div id="column_5_{$num}" class="nodisp" type="text" style="width:95%" row="{$num}"/>
-      <script>new_cell(document.getElementById('column_5_<xsl:value-of select="$num"/>'))</script>
+      <div id="column_5_{$num}" class="nodisp" style="width:100%" row="{$num}">
+        
+        
+      </div>
       
       <xsl:call-template name="table_column_5">
         <xsl:with-param name="num">
