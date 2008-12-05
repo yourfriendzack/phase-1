@@ -361,7 +361,7 @@
       <div class="bold bm_30" style="margin-top:30px">Welcome, <xsl:value-of select="@my_name"/>.</div>
          <xsl:choose>
             <xsl:when test="study">
-              <div class="bm_10">View Study Detail</div>
+              <div class="bm_10">Review Active Study</div>
               <div class="box_a">
                 <xsl:for-each select="study">
                   <a class="box_a_item" href="../p1_php/p1_cro.php?section=cro_active&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a>
@@ -376,7 +376,7 @@
     
     <div id="sub_column_2">
       <h2 class="bm_20" style="margin-left:40px;">View Study Detail</h2>
-      <h1 class="bm_20" style="margin-left:40px;"><xsl:value-of select="@my_name"/></h1>
+      <h1 class="bm_10" style="margin-left:40px;"><xsl:value-of select="@my_name"/></h1>
         <div class="bm_10" style="margin-left:40px;">View or edit study details.</div>
         
         <form id="view_study_form">
@@ -407,7 +407,7 @@
           
           <div class="clear bm_20"/>
           
-          <button class="right" onclick="my_submit('edit_study', {@user_id})">Save Changes</button>
+          <button class="right" style="margin-right:100px;" onclick="my_submit('edit_study', {@user_id})">Save Changes</button>
           
           <div class="clear"/>
           
@@ -420,6 +420,27 @@
     <div class="clear"/>
   
   </xsl:template>
+  
+  <xsl:template match="/root" name="cro_close">
+
+    
+    <ul id="menu">
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php">Home</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_screen">Screen New Subjects(s)</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_add">Add Subjects(s) to Database</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_database">Database Actions</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_register">Register a New Study</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_active">Active Studies</a></li>
+      <li><a id="selected" class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_close">Close a Study</a></li>
+    </ul>
+    
+    
+    <div id="content" class="cro_active_content">
+      So...you want to close a study?
+    </div>
+    
+  </xsl:template>
+  
   
   <xsl:template match="/root" name="admin_master">
     

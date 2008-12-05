@@ -110,6 +110,7 @@
          </script>
        </xsl:when>
        <xsl:when test="section/text() = 'cro_active'"><xsl:call-template name="cro_active"/></xsl:when>
+       <xsl:when test="section/text() = 'cro_close'"><xsl:call-template name="cro_close"/></xsl:when>
        <xsl:otherwise>
          <ul id="menu">
            <li><a id="selected" class="menu_link cro" href="../p1_php/p1_cro.php">Home</a></li>
