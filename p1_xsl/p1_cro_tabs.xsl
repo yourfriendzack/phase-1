@@ -375,8 +375,8 @@
     </div>
     
     <div id="sub_column_2">
-      <h2 class="bm_30" style="margin-left:40px;">View Study Detail</h2>
-      <h1 class="bm_30" style="margin-left:40px;"><xsl:value-of select="@my_name"/></h1>
+      <h2 class="bm_20" style="margin-left:40px;">View Study Detail</h2>
+      <h1 class="bm_20" style="margin-left:40px;"><xsl:value-of select="@my_name"/></h1>
         <div class="bm_10" style="margin-left:40px;">View or edit study details.</div>
         
         <form id="view_study_form">
@@ -407,7 +407,7 @@
           
           <div class="clear bm_20"/>
           
-          <button class="right" onclick="my_submit('edit_study', {@user_id})">Submit</button>
+          <button class="right" onclick="my_submit('edit_study', {@user_id})">Save Changes</button>
           
           <div class="clear"/>
           
