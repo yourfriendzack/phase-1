@@ -423,6 +423,9 @@
   
   </xsl:template>
   
+  
+  
+  
   <xsl:template match="/root" name="cro_close">
 
     
@@ -439,9 +442,9 @@
     
     <div id="content">
       <xsl:choose>
-      <xsl:when test="section/@study_number and section/@study_number != '' and section/@study_number != ' '">
+        <xsl:when test="section/@study_number and section/@study_number != '' and section/@study_number != ' '">
           
-          <!--<xsl:call-template name="view_active"/>-->
+          <xsl:call-template name="close_study"/>
           
         </xsl:when>
         
@@ -476,6 +479,73 @@
     </div>
     
   </xsl:template>
+  
+  <xsl:template match="/root" name="close_study">
+    <div id="sub_column_1">
+      
+      <div class="bold bm_30" style="margin-top:30px">Welcome, <xsl:value-of select="@my_name"/>.</div>
+         <xsl:choose>
+            <xsl:when test="study">
+              <div class="bm_10">Select a study to close</div>
+              <div class="box_a">
+                <xsl:for-each select="study">
+                  <a class="box_a_item" href="../p1_php/p1_cro.php?section=cro_close&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a>
+                </xsl:for-each>
+              </div>
+            </xsl:when>
+            <xsl:otherwise>
+              There are no studies which match your account.
+            </xsl:otherwise>
+         </xsl:choose>
+      
+    </div>
+    
+    <div id="sub_column_2">
+      <h2 class="bm_20" style="margin-left:40px;">Close this study?</h2>
+      <h1 class="bm_10" style="margin-left:40px;"><xsl:value-of select="@my_name"/></h1>
+        
+        <form id="view_study_form">
+          <div class="form_row">
+            <span class="label">Study Number</span>
+            <span class="input"><input id="study_number" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@study_number}" /></span>
+          </div>
+          <div class="form_row">
+            <span class="label">Study Leader</span>
+            <span class="input"><input id="study_leader" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@study_leader}" /></span>
+          </div>
+          <div class="form_row">
+            <span class="label">Sponsor</span>
+            <span class="input"><input id="sponsor" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@sponsor}" /></span>
+          </div>
+          <div class="form_row">
+            <span class="label">Drug</span>
+            <span class="input"><input id="drug" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@drug}" /></span>
+          </div>
+          <div class="form_row">
+            <span class="label">Target Enrollment</span>
+            <span class="input"><input id="drug" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@target_enrollment}" /></span>
+          </div>
+          <div class="form_row bm_30">
+            <span class="label">Subject Compensation</span>
+            <span class="input"><input id="subject_compensation" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@subject_compensation}" /></span>
+          </div>
+          
+          <div class="clear bm_20"/>
+          
+          <button class="right" style="margin-right:100px;" onclick="my_submit('close_study', {@user_id})">Close</button>
+          
+          <div class="clear"/>
+          
+        </form>
+        
+      
+      
+    </div>
+    
+    <div class="clear"/>
+  
+  </xsl:template>
+  
   
   
   <xsl:template match="/root" name="admin_master">
