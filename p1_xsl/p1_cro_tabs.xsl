@@ -364,7 +364,7 @@
               <div class="bm_10">View Study Detail</div>
               <div class="box_a">
                 <xsl:for-each select="study">
-                  <a class="box_a_item" href="../p1_php/p1_cro.php?section=cro_add&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a>
+                  <a class="box_a_item" href="../p1_php/p1_cro.php?section=cro_active&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a>
                 </xsl:for-each>
               </div>
             </xsl:when>
@@ -377,7 +377,7 @@
     <div id="sub_column_2">
       <h2 class="bm_30" style="margin-left:40px;">View Study Detail</h2>
       <h1 class="bm_30" style="margin-left:40px;"><xsl:value-of select="@my_name"/></h1>
-        <div class="bm_10" style="margin-left:40px;">Please enter study information.</div>
+        <div class="bm_10" style="margin-left:40px;">View or edit study details.</div>
         
         <form id="view_study_form">
           <div class="form_row">
