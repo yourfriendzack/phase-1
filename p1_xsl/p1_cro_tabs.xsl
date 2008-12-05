@@ -455,7 +455,7 @@
               <div class="bm_10">Please select a study to close.</div>
               <div class="box_a">
                 <xsl:for-each select="study">
-                  <a class="box_a_item" href="../p1_php/p1_cro.php?section=cro_add&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a>
+                  <a class="box_a_item" href="../p1_php/p1_cro.php?section=cro_close&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a>
                 </xsl:for-each>
               </div>
             </xsl:when>
