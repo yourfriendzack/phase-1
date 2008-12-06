@@ -384,7 +384,7 @@
         <form id="view_study_form">
           <div class="form_row">
             <span class="label">Study Number</span>
-            <span class="input"><input id="study_number" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@study_number}" /></span>
+            <span class="input cell_bg_c"><xsl:value-of select="study[@study_number = ../section/@study_number]/@study_number"/></span>
           </div>
           <div class="form_row">
             <span class="label">Study Leader</span>
@@ -416,6 +416,8 @@
         </form>
         
       <button class="right" style="margin-right:100px;" onclick="my_submit('save_study', {@user_id})">Save Changes</button>
+      
+      
       
     </div>
     
