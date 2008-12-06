@@ -215,7 +215,6 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	     var url = cro_submit_url + "?location=" + arg_a;
 	     var url = url + "&user_id=" + arg_b;
 	     var url = url + "&study_number=" + arg_c;
-	     var url = url + "&study_number=" + document.getElementById('study_number').value;
 	     var url = url + "&study_leader=" + document.getElementById('study_leader').value;
 	     var url = url + "&sponsor=" + document.getElementById('sponsor').value;
 	     var url = url + "&drug=" + document.getElementById('drug').value;
