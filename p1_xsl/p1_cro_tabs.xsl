@@ -400,7 +400,7 @@
           </div>
           <div class="form_row">
             <span class="label">Target Enrollment</span>
-            <span class="input"><input id="drug" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@target_enrollment}" /></span>
+            <span class="input"><input id="target_enrollment" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@target_enrollment}" /></span>
           </div>
           <div class="form_row bm_30">
             <span class="label">Subject Compensation</span>
@@ -409,7 +409,7 @@
           
           <div class="clear bm_20"/>
           
-          <button class="right" style="margin-right:100px;" onclick="my_submit('edit_study', {@user_id})">Save Changes</button>
+          <button class="right" style="margin-right:100px;" onclick="my_submit('save_study', {@user_id})">Save Changes</button>
           
           <div class="clear"/>
           

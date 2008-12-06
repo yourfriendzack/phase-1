@@ -211,6 +211,31 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	     
 	  }
 	  
+	  else if (arg_a == "save_study") {
+	     var url = cro_submit_url + "?location=" + arg_a;
+	     var url = url + "&user_id=" + arg_b;
+	     var url = url + "&study_number=" + arg_c;
+	     var url = url + "&study_number=" + document.getElementById('study_number').value;
+	     var url = url + "&study_leader=" + document.getElementById('study_leader').value;
+	     var url = url + "&sponsor=" + document.getElementById('sponsor').value;
+	     var url = url + "&drug=" + document.getElementById('drug').value;
+	     var url = url + "&target_enrollment=" + document.getElementById('target_enrollment').value;
+	     var url = url + "&subject_compensation=" + document.getElementById('subject_compensation').value;
+	  
+	    my_reaction = function my_reaction( responseText ) 
+	    {
+	      var responseText = eval( responseText );
+	      if (responseText == true) {
+    	      
+    	      ctalk('Changes saved');
+    	      
+	      }
+	      else if (responseText == false) {
+	          ctalk('There was an error');
+	      }
+	    }
+      }
+      
       else if (arg_a == "close_study") {
 	     var url = cro_submit_url + "?location=" + arg_a;
 	     var url = url + "&user_id=" + arg_b;
@@ -229,6 +254,13 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	      }
 	    }
       }
+	
+	
+	
+	
+	
+	
+	
 	
 	 if (ajax_oktogo == true) {
        ajax_object.open("GET", url, true);
