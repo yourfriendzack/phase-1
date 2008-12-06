@@ -211,7 +211,7 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
       else if (arg_a == "close_study") {
 	     var url = cro_submit_url + "?location=" + arg_a;
 	     var url = url + "&user_id=" + arg_b;
-	     var url = url + "&study_id=" + arg_c;
+	     var url = url + "&study_number=" + arg_c;
 	  
 	    my_reaction = function my_reaction( responseText ) 
 	    {
