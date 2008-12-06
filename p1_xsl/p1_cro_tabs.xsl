@@ -415,7 +415,7 @@
           
         </form>
         
-      <button class="right" style="margin-right:100px;" onclick="my_submit('save_study', {@user_id})">Save Changes</button>
+      <button class="right" style="margin-right:100px;" onclick="my_submit('save_study', {@user_id}, {study[@study_number = ../section/@study_number]/@study_number})">Save Changes</button>
       
       
       
