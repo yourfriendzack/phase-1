@@ -10,9 +10,7 @@ function randomXToY(minVal,maxVal,floatVal)
 
 // Leave this function alone!  So that if u dont define a my_reaction further down, there won't be an error.
 var my_reaction = function my_reaction( responseText ) 
-{
- alert( responseText ); 
-};
+{};
 
 
 
@@ -49,6 +47,9 @@ function create_ajax_object()
       my_reaction( xmlHttp.responseText );
       }
   }
+  // Clear out the reaction function
+  var my_reaction = function my_reaction( responseText ) 
+  {};
   return xmlHttp;
 }
   
