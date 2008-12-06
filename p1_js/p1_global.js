@@ -245,7 +245,7 @@ function get_anchor() {
   
   if (anchor_value == 'close_true') { 
     ctalk('Study succesfully removed.');
-    self.document.location.hash = '';
+    self.document.location.hash = '#null';
   }
 }
 
