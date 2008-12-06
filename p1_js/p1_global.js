@@ -242,8 +242,9 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 
 function get_anchor() {
   var anchor_value = self.document.location.hash.substring(1);
-
-  if (anchor_value == 'close_true') {  
+  
+  if (anchor_value == 'close_true') { 
+    alert(anchor_value.length);
     ctalk('Study succesfully removed.');
     window.location = "../p1_php/p1_cro.php?section=cro_close";
   }
