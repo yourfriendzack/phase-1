@@ -45,11 +45,12 @@ function create_ajax_object()
     if(xmlHttp.readyState==4)
       {
       my_reaction( xmlHttp.responseText );
+      // Clear out the reaction function
+      my_reaction = function my_reaction( responseText ) 
+      {};
       }
   }
-  // Clear out the reaction function
-  var my_reaction = function my_reaction( responseText ) 
-  {};
+  
   return xmlHttp;
 }
   
