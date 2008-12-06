@@ -507,32 +507,32 @@
         <form id="view_study_form">
           <div class="form_row">
             <span class="label">Study Number</span>
-            <span class="input"><input id="study_number" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@study_number}" /></span>
+            <span class="input cell_bg_c"><xsl:value-of select="study[@study_number = ../section/@study_number]/@study_number"/></span>
           </div>
           <div class="form_row">
             <span class="label">Study Leader</span>
-            <span class="input"><input id="study_leader" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@study_leader}" /></span>
+            <span class="input cell_bg_c"><xsl:value-of select="study[@study_number = ../section/@study_number]/@study_leader"/></span>
           </div>
           <div class="form_row">
             <span class="label">Sponsor</span>
-            <span class="input"><input id="sponsor" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@sponsor}" /></span>
+            <span class="input cell_bg_c"><xsl:value-of select="study[@study_number = ../section/@study_number]/@sponsor"/></span>
           </div>
           <div class="form_row">
             <span class="label">Drug</span>
-            <span class="input"><input id="drug" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@drug}" /></span>
+            <span class="input cell_bg_c"><xsl:value-of select="study[@study_number = ../section/@study_number]/@drug"/></span>
           </div>
           <div class="form_row">
             <span class="label">Target Enrollment</span>
-            <span class="input"><input id="drug" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@target_enrollment}" /></span>
+            <span class="input cell_bg_c"><xsl:value-of select="study[@study_number = ../section/@study_number]/@target_enrollment"/></span>
           </div>
           <div class="form_row bm_30">
             <span class="label">Subject Compensation</span>
-            <span class="input"><input id="subject_compensation" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@subject_compensation}" /></span>
+            <span class="input cell_bg_c"><xsl:value-of select="study[@study_number = ../section/@study_number]/@subject_compensation"/></span>
           </div>
           
           <div class="clear bm_20"/>
           
-          <button class="right" style="margin-right:100px;" onclick="my_submit('close_study', {@user_id})">Close</button>
+          <button class="right" style="margin-right:100px; width:100px;" onclick="my_submit('close_study', {@user_id})">Close</button>
           
           <div class="clear"/>
           
