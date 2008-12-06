@@ -45,7 +45,7 @@
 <script type="text/javascript" src="../p1_js/p1_global.js"/>
 </head>
 
-<body class="yui-skin-sam" onclick="ctalk('test')" onload="get_anchor();">
+<body class="yui-skin-sam" onload="get_anchor();">
 
   <div id="popup" style="z-index:99999; overflow:visible;">
     
