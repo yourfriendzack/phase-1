@@ -1,4 +1,7 @@
-// Global Functions
+//*********************************************************
+// Global
+//*********************************************************
+
 var submit_url = "../p1_php/p1_submit.php";
 var cro_submit_url = "../p1_php/p1_cro_submit.php";
 
@@ -218,7 +221,8 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	      var responseText = eval( responseText );
 	      if (responseText == true) {
     	      //window.location.reload();
-    	      ctalk('Study succesfully removed.');
+    	      window.location = "../p1_php/p1_cro.php?section=cro_close#close_true"
+    	      
 	      }
 	      else if (responseText == false) {
 	          ctalk('There was an error');
@@ -230,6 +234,17 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
        ajax_object.open("GET", url, true);
        ajax_object.send(null);
      }
+}
+
+//*********************************************************
+// Onload
+//*********************************************************
+
+function anchor(anchor_value) {
+  if (anchor_value == 'close_true') {
+    ctalk('Study succesfully removed.');
+    window.location = "../p1_php/p1_cro.php?section=cro_close"
+  }
 }
 
 //*********************************************************

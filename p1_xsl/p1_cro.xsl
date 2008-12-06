@@ -45,7 +45,7 @@
 <script type="text/javascript" src="../p1_js/p1_global.js"/>
 </head>
 
-<body class="yui-skin-sam" onclick="//popup('hi there. this is your concious speaking. I like u! But seriously, brush your teeth.')">
+<body class="yui-skin-sam" onload="anchor({section/@anchor});">
 
   <div id="popup" style="z-index:99999; overflow:visible;">
     
