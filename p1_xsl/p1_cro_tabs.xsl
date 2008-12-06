@@ -409,13 +409,13 @@
           
           <div class="clear bm_20"/>
           
-          <button class="right" style="margin-right:100px;" onclick="my_submit('save_study', {@user_id})">Save Changes</button>
+          
           
           <div class="clear"/>
           
         </form>
         
-      
+      <button class="right" style="margin-right:100px;" onclick="my_submit('save_study', {@user_id})">Save Changes</button>
       
     </div>
     
