@@ -245,7 +245,7 @@ function get_anchor() {
   
   if (anchor_value == 'close_true') { 
     ctalk('Study succesfully removed.');
-  //  window.location = "../p1_php/p1_cro.php?section=cro_close";
+    self.document.location.hash = '';
   }
 }
 
