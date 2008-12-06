@@ -50,7 +50,6 @@ function create_ajax_object()
       {};
       }
   }
-  
   return xmlHttp;
 }
   
@@ -220,7 +219,6 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	      if (responseText == true) {
     	      //window.location.reload();
     	      ctalk('Study succesfully removed.');
-    	      alert(responseText);
 	      }
 	      else if (responseText == false) {
 	          ctalk('There was an error');
