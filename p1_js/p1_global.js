@@ -182,25 +182,45 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	         ctalk('Your study was added');
 	       }
 	       else {
+	         ctalk('Failure. There was an error.');
+	       }
+	     }
+	     
+	  }
+	  
+	  else if (arg_a == "remove_study") {
+	     var url = submit_url + "?location=" + arg_a;
+	     var url = url + "&user_id=" + arg_b;
+	     var url = url + "&study_number=" + document.getElementById('study_number').value;
+	      
+	     my_reaction = function my_reaction( responseText ) {
+	       popup.hide();
+	       var responseText = eval( responseText );
+	       
+	       if ((responseText == true)) {
+	         ctalk('Your study was added');
+	       }
+	       else {
 	         ctalk('Your study was not added. Something has gone horribly wrong.');
 	       }
 	     }
 	     
 	  }
 	  
-      else if (arg_a == "remove_study") {
-	     var url = submit_url + "?location=" + arg_a;
-	     var url = url + "&study_id=" + arg_b.getAttribute('study_id');
-	     var url = url + "&study_number=" + arg_b.getAttribute('study_number');
+      else if (arg_a == "close_study") {
+	     var url = cro_submit_url + "?location=" + arg_a;
+	     var url = url + "&user_id=" + arg_b;
+	     var url = url + "&study_id=" + arg_c;
 	  
 	    my_reaction = function my_reaction( responseText ) 
 	    {
 	      var responseText = eval( responseText );
 	      if (responseText == true) {
-    	      window.location.reload();
+    	      //window.location.reload();
+    	      ctalk('Study succesfully removed.');
 	      }
 	      else if (responseText == false) {
-	        // The reaction for false goes here
+	        ctalk('There was an error');
 	      }
 	    }
       }

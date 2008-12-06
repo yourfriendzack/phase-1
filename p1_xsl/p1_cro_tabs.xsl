@@ -532,7 +532,7 @@
           
           <div class="clear bm_20"/>
           
-          <button class="right" style="margin-right:100px; width:100px;" onclick="my_submit('close_study', {@user_id})">Close</button>
+          <button class="right" style="margin-right:100px; width:100px;" onclick="my_submit('close_study', {@user_id}, {study[@study_number = ../section/@study_number]/@study_id})" >Close</button>
           
           <div class="clear"/>
           
