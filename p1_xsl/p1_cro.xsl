@@ -58,6 +58,8 @@
         
         
         <a class="ok_button right" href="javascript:;" onclick="popup_object.hide();">OK</a>
+        <a class="yes_button right nodisp" href="javascript:;" onclick="popup_object.hide();">Yes</a>
+        <a class="no_button right nodisp" href="javascript:;" onclick="popup_object.hide();">No</a>
         <!-- Content END -->
         <div class="clear"/>
       </div>

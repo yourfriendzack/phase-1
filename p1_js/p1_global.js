@@ -234,15 +234,17 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 
 //*********************************************************
 // CTalk
-//*********************************************************
-
+//********************************************************* 
+  
 var ctalk_array = new Array();
 
 function ctalk(arg_a) {
   
   var newdiv = document.createElement('div');
-  newdiv.setAttribute('class', 'popup_bg ctalk_box');
+  newdiv.setAttribute('class', 'ctalk_box popup_bg');
   newdiv.setAttribute('id', 'yyy');
+  
+  newdiv.style.position = 'fixed';
   
   newdiv.innerHTML = 
   "<div class='content'><div class='t'></div><div class='bm_2'></div>"+arg_a+"<div class='clear'></div></div><div class='b'><div></div></div>";
@@ -255,7 +257,7 @@ function ctalk(arg_a) {
   var myAnim = new YAHOO.util.Motion(newdiv, {points:  
     { by: [0, -new_height - 10] }  
     }, 0.5); 
-
+    
     myAnim.animate();
 
     for (var i=0; i < ctalk_array.length; i++) {
