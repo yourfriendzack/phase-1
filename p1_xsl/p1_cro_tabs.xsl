@@ -639,13 +639,10 @@
       <div id="tc_3_title" style="border:none;">
           <div class="italic color_000" style="text-align:center;">Flagged</div>
       </div>
-      <div id="tc_4_title" style="border:none;">
-          <div class="italic color_000" style="text-align:center;">Washout</div>
-      </div>
       
       <div class="clear"/>
       
-      <div id="table_box">
+      <div id="volunteer_table">
         <div id="table_column_1">
           
           <xsl:call-template name="volunteer_col_1"/>
