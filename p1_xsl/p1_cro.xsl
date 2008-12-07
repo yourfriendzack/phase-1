@@ -119,7 +119,7 @@
            <li><a id="selected" class="menu_link cro" href="../p1_php/p1_cro.php">Home</a></li>
            <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_screen">Screen New Subjects(s)</a></li>
            <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_add">Add Subjects(s) to Database</a></li>
-           <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_database">Database Actions</a></li>
+           <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_action">Database Actions</a></li>
            <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_register">Register a New Study</a></li>
            <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_active">Active Studies</a></li>
            <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_close">Close a Study</a></li>
