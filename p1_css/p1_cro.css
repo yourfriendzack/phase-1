@@ -199,5 +199,23 @@ border:none;
 ********************************************************/
 
 #volunteer_table {
-  width: 400px;
+  width: 333px;
+}
+#volunteer_table #column_1 {
+float:left;
+width:30px;
+height:100%;
+border-right: 1px solid #666;
+}
+#volunteer_table #column_2 {
+float:left;
+width:150px;
+height:100%;
+border-right: 2px solid #444;
+}
+#volunteer_table #column_3 {
+float:left;
+width:150px;
+height:100%;
+border-right: 0px solid #666;
 }

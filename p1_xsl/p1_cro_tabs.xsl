@@ -628,6 +628,7 @@
     </div>
     
     <div id="sub_column_2">
+      <h2 class="bm_20">Review Screens</h2>
       <div id="table_data" class="nodisp" row_quantity="{$row_quantity}"/>
       
       <div id="tc_1_title" style="color:#fff; border:none;">
@@ -643,17 +644,17 @@
       <div class="clear"/>
       
       <div id="volunteer_table">
-        <div id="table_column_1">
+        <div id="column_1">
           
           <xsl:call-template name="volunteer_col_1"/>
           
         </div>
-        <div id="table_column_2">
+        <div id="column_2">
           
           <xsl:call-template name="volunteer_col_2"/>
           
         </div>
-        <div id="table_column_3">
+        <div id="column_3">
           
           <xsl:call-template name="volunteer_col_3"/>
           
@@ -665,7 +666,10 @@
       <input id="add_row_button" class="" type="button" value="+ add another row" onclick="new_row();"/>-->
     </div>
     
-    
+    <div id="sub_column_3">
+      
+      
+    </div>
   
   </xsl:template>
   
@@ -712,10 +716,7 @@
     <xsl:if test="not($num = $row_quantity + 1)">
       
       
-      <xsl:choose>
-        <xsl:when test="$num mod 2 != 0"><div id="column_1_{$num}" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}">    </div></xsl:when>
-        <xsl:otherwise><div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}">   </div></xsl:otherwise>
-      </xsl:choose>
+      <div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}">   </div>
       
       <xsl:call-template name="volunteer_col_3">
         <xsl:with-param name="num">
