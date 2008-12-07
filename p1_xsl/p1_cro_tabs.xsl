@@ -16,7 +16,7 @@
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php">Home</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_screen">Screen New Subjects(s)</a></li>
       <li><a id="selected" class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_add">Add Subjects(s) to Database</a></li>
-      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_database">Database Actions</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_action">Database Actions</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_register">Register a New Study</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_active">Active Studies</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_close">Close a Study</a></li>
@@ -221,7 +221,7 @@
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php">Home</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_screen">Screen New Subjects(s)</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_add">Add Subjects(s) to Database</a></li>
-      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_database">Database Actions</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_action">Database Actions</a></li>
       <li><a id="selected" class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_register">Register a New Study</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_active">Active Studies</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_close">Close a Study</a></li>
@@ -293,7 +293,7 @@
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php">Home</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_screen">Screen New Subjects(s)</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_add">Add Subjects(s) to Database</a></li>
-      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_database">Database Actions</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_action">Database Actions</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_register">Register a New Study</a></li>
       <li><a id="selected" class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_active">Active Studies</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_close">Close a Study</a></li>
@@ -435,7 +435,7 @@
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php">Home</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_screen">Screen New Subjects(s)</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_add">Add Subjects(s) to Database</a></li>
-      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_database">Database Actions</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_action">Database Actions</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_register">Register a New Study</a></li>
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_active">Active Studies</a></li>
       <li><a id="selected" class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_close">Close a Study</a></li>
@@ -481,6 +481,8 @@
     </div>
     
   </xsl:template>
+  
+  
   
   <xsl:template match="/root" name="close_study">
     <div id="sub_column_1">
@@ -550,79 +552,60 @@
   
   
   
-  <xsl:template match="/root" name="admin_master">
-    
- 
-    <ul id="menu">
-      <li><a class="menu_link" href="../p1_php/p1_admin.php">Home</a></li>
-      <li><a class="menu_link" href="../p1_php/p1_admin.php?section=admin_closed">Closed Studies</a></li>
-      <li><a class="menu_link" href="../p1_php/p1_admin.php?section=admin_active">Active Studies</a></li>
-      <li><a class="menu_link" href="../p1_php/p1_admin.php?section=admin_all">View All Studies</a></li>
-      <li><a id="selected" class="menu_link" href="../p1_php/p1_admin.php?section=admin_master">Master Study Record</a></li>
-      <li><a class="menu_link" href="../p1_php/p1_admin.php?section=admin_stats" style="padding-right:26px;">Database Statistics</a></li>
-    </ul>
-    
-    
-    <div id="content">
+ <xsl:template match="/root" name="cro_action">
+   <ul id="menu">
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php">Home</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_screen">Screen New Subjects(s)</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_add">Add Subjects(s) to Database</a></li>
+      <li><a id="selected" class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_action">Database Actions</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_register">Register a New Study</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_active">Active Studies</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_close">Close a Study</a></li>
+   </ul>
+   
+   <div id="content">
+    <div id="sub_column_1">
       
-      <div class="left bold" style="width:25%; margin-bottom:10px;">CRO</div> 
-      <div class="left bold" style="width:30%;">Study #</div> 
-      <div class="left bold" style="width:30%;">Status</div> 
-      <div class="right bold">Invoice #</div>
-      
-      <div class="clear"/>
-      <xsl:for-each select="cro">
-        <xsl:variable name="cro"><xsl:value-of select="text()"/></xsl:variable>
-        <div class="row">
-          <div class="left" style="width:23%; height:100%; padding-top:10px;"><xsl:value-of select="text()"/></div>
-          <xsl:for-each select="../study[@cro = $cro]">
-            
-            <div class="right" style="padding:10px 10px 10px 10px; width:73.7%;" study_id="{@study_id}" study_number="{@study_number}">
-              
-              <div class="left" style="width:40.5%;"><xsl:value-of select="@study_number"/></div>
-              <div class="left" style="width:51.5%;"><xsl:value-of select="@status"/>
-                <xsl:if test="@status = 'Closed'"> - <xsl:value-of select="@closed_date"/></xsl:if>
+      <div class="bold bm_30" style="margin-top:30px">Welcome, <xsl:value-of select="@my_name"/>.</div>
+         <xsl:choose>
+            <xsl:when test="study">
+              <div class="bm_10">Please select a study.</div>
+              <div class="box_a">
+                <xsl:for-each select="study">
+                  <a class="box_a_item" href="../p1_php/p1_cro.php?section=cro_close&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a>
+                </xsl:for-each>
               </div>
-              <div class="left" style="width:5%;"><xsl:value-of select="@invoice_number"/></div>
-            </div>
-          </xsl:for-each>
-          <div class="clear"/>
-        </div>
-      </xsl:for-each>
+            </xsl:when>
+            <xsl:otherwise>
+              There are no studies which match your account.
+            </xsl:otherwise>
+         </xsl:choose>
       
     </div>
     
+    <div id="sub_column_2">
+      <h2>Review Database Actions</h2>
+      
+    </div>
     
-    
-    
+    <div class="clear"/>
+  
+   </div>
   </xsl:template>
   
   
   
   
-  <xsl:template match="/root" name="admin_stats">
-    
-
-    <ul id="menu">
-      <li><a class="menu_link" href="../p1_php/p1_admin.php">Home</a></li>
-      <li><a class="menu_link" href="../p1_php/p1_admin.php?section=admin_closed">Closed Studies</a></li>
-      <li><a class="menu_link" href="../p1_php/p1_admin.php?section=admin_active">Active Studies</a></li>
-      <li><a class="menu_link" href="../p1_php/p1_admin.php?section=admin_all">View All Studies</a></li>
-      <li><a class="menu_link" href="../p1_php/p1_admin.php?section=admin_master">Master Study Record</a></li>
-      <li><a id="selected" class="menu_link" href="../p1_php/p1_admin.php?section=admin_stats" style="padding-right:26px;">Database Statistics</a></li>
-    </ul>
-    
-    
-    <div id="content">
-      
-      Hi there!  Welcome to the Database Statistics tab.
-      
-    </div>
-    
-    
-    
-    
-  </xsl:template>
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
 </xsl:stylesheet>
 
 

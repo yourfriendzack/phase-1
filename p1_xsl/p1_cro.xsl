@@ -111,6 +111,7 @@
            calendar_b.render();
          </script>
        </xsl:when>
+       <xsl:when test="section/text() = 'cro_action'"><xsl:call-template name="cro_action"/></xsl:when>
        <xsl:when test="section/text() = 'cro_active'"><xsl:call-template name="cro_active"/></xsl:when>
        <xsl:when test="section/text() = 'cro_close'"><xsl:call-template name="cro_close"/></xsl:when>
        <xsl:otherwise>
