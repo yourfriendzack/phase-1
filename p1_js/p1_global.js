@@ -173,6 +173,7 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	     var url = url + "&study_leader=" + document.getElementById('study_leader').value;
 	     var url = url + "&sponsor=" + document.getElementById('sponsor').value;
 	     var url = url + "&drug=" + document.getElementById('drug').value;
+	     var url = url + "&target_enrollment=" + document.getElementById('target_enrollment').value;
 	     var url = url + "&subject_compensation=" + document.getElementById('subject_compensation').value;
 	     var url = url + "&start_date=" + calendar_a.getSelectedDates()[0];
 	     var url = url + "&end_date=" + calendar_b.getSelectedDates()[0];

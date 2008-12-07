@@ -256,6 +256,10 @@
             <span class="label">Drug</span>
             <span class="input"><input id="drug" type="text" size="25" /></span>
           </div>
+          <div class="form_row">
+            <span class="label">Target Enrollment</span>
+            <span class="input"><input id="target_enrollment" type="text" size="25" value="{study[@study_number = ../section/@study_number]/@target_enrollment}" /></span>
+          </div>
           <div class="form_row bm_30">
             <span class="label">Subject Compensation</span>
             <span class="input"><input id="subject_compensation" type="text" size="25" /></span>
@@ -572,7 +576,7 @@
               <div class="bm_10">Please select a study.</div>
               <div class="box_a">
                 <xsl:for-each select="study">
-                  <a class="box_a_item" href="../p1_php/p1_cro.php?section=cro_close&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a>
+                  <a class="box_a_item" href="../p1_php/p1_cro.php?section=cro_action&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a>
                 </xsl:for-each>
               </div>
             </xsl:when>
@@ -607,13 +611,3 @@
   
   
 </xsl:stylesheet>
-
-
-
-
-
-
-
-
-
-
