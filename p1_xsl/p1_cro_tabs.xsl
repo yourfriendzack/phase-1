@@ -592,6 +592,7 @@
             </xsl:when>
             <xsl:otherwise>
               There are no studies which match your account.
+              
             </xsl:otherwise>
          </xsl:choose>
       
