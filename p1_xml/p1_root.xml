@@ -9,7 +9,7 @@
     <study cro="Pfizer" status="Active" start_date="Nov. 12 2008" study_id="7" study_number="007433" subjects_screened="24" subjects_added="5" study_leader="ralph" subject_compensation="8"></study>
     <study cro="Pfizer" status="Active" start_date="Nov. 12 2008" study_id="6" study_number="907733" subjects_screened="24" subjects_added="5"></study>
     <study cro="Merck" status="Active" start_date="Nov. 12 2008" study_id="5" study_number="9067733" subjects_screened="24" subjects_added="5"></study>
-    <subject subject_id="4UtjAM" outpatient_date="22" washout_period="yup"></subject>
-    <subject subject_id="4UtjsdfsAM" outpatient_date="22" washout_period="yup"></subject>
-    <subject subject_id="4Utj3234AM" outpatient_date="22" washout_period="yup"></subject>
+    <subject subject_id="1UtjAM" outpatient_date="22" washout_period="yup"></subject>
+    <subject subject_id="2UtjsdfsAM" outpatient_date="22" washout_period="yup"></subject>
+    <subject subject_id="3Utj3234AM" outpatient_date="22" washout_period="yup"></subject>
 </root>

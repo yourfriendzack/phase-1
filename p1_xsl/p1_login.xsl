@@ -52,7 +52,7 @@
        
          
          
-           <div id="subtitle">Welcome to Phase-1Check.com!  I really like you!</div>
+           <div id="subtitle">Welcome to Phase-1Check.com</div>
            
            <div id="login_panel">
          

@@ -681,7 +681,7 @@
         <xsl:otherwise><div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:otherwise>
       </xsl:choose>
       
-      <xsl:call-template name="recurse_till_ten">
+      <xsl:call-template name="volunteer_col_1">
         <xsl:with-param name="num">
           <xsl:value-of select="$num + 1"/>
         </xsl:with-param>
@@ -695,11 +695,11 @@
       
       
       <xsl:choose>
-        <xsl:when test="$num mod 2 != 0"><div id="column_1_{$num}" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:when>
-        <xsl:otherwise><div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:otherwise>
+        <xsl:when test="$num mod 2 != 0"><div id="column_1_{$num}" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"> <xsl:value-of select="subject[number($num)]/@subject_id"/> </div></xsl:when>
+        <xsl:otherwise><div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"> <xsl:value-of select="subject[number($num)]/@subject_id"/> </div></xsl:otherwise>
       </xsl:choose>
       
-      <xsl:call-template name="recurse_till_ten">
+      <xsl:call-template name="volunteer_col_2">
         <xsl:with-param name="num">
           <xsl:value-of select="$num + 1"/>
         </xsl:with-param>
@@ -713,11 +713,11 @@
       
       
       <xsl:choose>
-        <xsl:when test="$num mod 2 != 0"><div id="column_1_{$num}" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:when>
-        <xsl:otherwise><div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:otherwise>
+        <xsl:when test="$num mod 2 != 0"><div id="column_1_{$num}" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}">    </div></xsl:when>
+        <xsl:otherwise><div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}">   </div></xsl:otherwise>
       </xsl:choose>
       
-      <xsl:call-template name="recurse_till_ten">
+      <xsl:call-template name="volunteer_col_3">
         <xsl:with-param name="num">
           <xsl:value-of select="$num + 1"/>
         </xsl:with-param>
