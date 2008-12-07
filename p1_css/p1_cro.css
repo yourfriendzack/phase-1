@@ -26,10 +26,14 @@ float:left;
 width:68%;
 padding:30px 0 0 0;
 }
+#sub_column_3 {
+float:left;
+padding:30px 0 0 0;
+}
 
 
 
-#table_box, #volunteer_table {
+#table_box {
   border: 2px solid #666;
   width: 100%;
   height:578px;
@@ -195,27 +199,98 @@ border:none;
 }
 
 /********************************************************
-* Active Studies
+* Database Action
 ********************************************************/
-
+.study_action_content #sub_column_1 {
+ width:26%;
+}
+.study_action_content #sub_column_2 {
+ width:35%;
+}
+.study_action_content #sub_column_3 {
+ width:35%;
+ padding-left:10px;
+}
 #volunteer_table {
-  width: 333px;
+  width: 253px;
+  /*height:578px;*/
+  margin:10px 0 20px 0;
+}
+
+#volunteer_table .table_head {
+  width: 100%;
+  border: 2px solid #fff;
+}
+#volunteer_table .title_1, #volunteer_table #column_1 {
+  width:30px;
+  float:left;
+  border-right: 1px solid #fff;
+}
+#volunteer_table .title_2, #volunteer_table #column_2{
+  width:150px;
+  float:left;
+  border-right: 2px solid #fff;
+}
+#volunteer_table .title_3, #volunteer_table #column_3 {
+  width:70px;
+  float:left;
+}
+
+#volunteer_table .table_body{
+  width: 100%;
+  border: 2px solid #666;
 }
 #volunteer_table #column_1 {
-float:left;
-width:30px;
 height:100%;
 border-right: 1px solid #666;
 }
 #volunteer_table #column_2 {
-float:left;
-width:150px;
 height:100%;
 border-right: 2px solid #444;
 }
 #volunteer_table #column_3 {
-float:left;
-width:150px;
 height:100%;
-border-right: 0px solid #666;
+}
+
+
+
+#review_adds_table {
+  width: 253px;
+  /*height:578px;*/
+  margin:10px 0 20px 0;
+}
+
+#review_adds_table .table_head {
+  width: 100%;
+  border: 2px solid #fff;
+}
+#review_adds_table .title_1, #review_adds_table #column_1 {
+  width:30px;
+  float:left;
+  border-right: 1px solid #fff;
+}
+#review_adds_table .title_2, #review_adds_table #column_2{
+  width:150px;
+  float:left;
+  border-right: 2px solid #fff;
+}
+#review_adds_table .title_3, #review_adds_table #column_3 {
+  width:70px;
+  float:left;
+}
+
+#review_adds_table .table_body{
+  width: 100%;
+  border: 2px solid #666;
+}
+#review_adds_table #column_1 {
+height:100%;
+border-right: 1px solid #666;
+}
+#review_adds_table #column_2 {
+height:100%;
+border-right: 2px solid #444;
+}
+#review_adds_table #column_3 {
+height:100%;
 }

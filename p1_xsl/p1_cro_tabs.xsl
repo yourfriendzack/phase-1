@@ -569,7 +569,7 @@
       <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_close">Close a Study</a></li>
    </ul>
    
-   <div id="content">
+   
      <xsl:choose>
         <xsl:when test="section/@study_number and section/@study_number != '' and section/@study_number != ' '">
           
@@ -578,6 +578,7 @@
         </xsl:when>
         
         <xsl:otherwise>
+          <div id="content">
     <div id="sub_column_1">
       
       <div class="bold bm_30" style="margin-top:30px">Welcome, <xsl:value-of select="@my_name"/>.</div>
@@ -605,19 +606,21 @@
     
     
   
-  
-     </xsl:otherwise>
-     </xsl:choose>
-     
      <div class="clear"/>
      
    </div>
+     </xsl:otherwise>
+     </xsl:choose>
+     
+     
   </xsl:template>
   
   
   
   
  <xsl:template match="/root" name="study_action">
+    <div id="content" class="study_action_content">
+      
     <div id="sub_column_1">
       <div class="bold bm_30" style="margin-top:30px">Welcome, <xsl:value-of select="@my_name"/>.</div>
       <div class="bm_20"><span class="mini_title">Study # </span><span style="color:#ff55ff"><xsl:value-of select="study/@study_number"/></span></div>
@@ -631,19 +634,26 @@
       <h2 class="bm_20">Review Screens</h2>
       <div id="table_data" class="nodisp" row_quantity="{$row_quantity}"/>
       
-      <div id="tc_1_title" style="color:#fff; border:none;">
-        aa
-      </div>
-      <div id="tc_2_title" style="border:none;">
-          <div class="italic color_000" style="text-align:center;">Volunteers Screened</div>
-      </div>
-      <div id="tc_3_title" style="border:none;">
-          <div class="italic color_000" style="text-align:center;">Flagged</div>
-      </div>
-      
-      <div class="clear"/>
-      
       <div id="volunteer_table">
+        <div class="table_head">
+        <div class="title_1" style="color:#fff">
+          a
+        </div>
+        <div class="title_2">
+           <div class="italic color_000" style="text-align:center;">Volunteers Screened</div>
+        </div>
+        <div class="title_3">
+           <div class="italic color_000" style="text-align:center;">Flagged</div>
+        </div>
+          
+          <div class="clear"/>
+          
+        </div>
+        
+      
+      
+      <div class="table_body">
+        
         <div id="column_1">
           
           <xsl:call-template name="volunteer_col_1"/>
@@ -660,17 +670,68 @@
           
         </div>
         
+        
+          <div class="clear"/>
+        
+        </div>
+        
       </div>
       
       <!--<input id="submit_subjects_button" class="right" type="button" value="Submit" onclick="my_submit('add_subject', {/root/@user_id}, {/root/study/@study_number})"/>
       <input id="add_row_button" class="" type="button" value="+ add another row" onclick="new_row();"/>-->
     </div>
     
-    <div id="sub_column_3">
+      <div id="sub_column_3">
+        <h2 class="bm_20">Review Adds</h2>
+        
+        <div id="review_adds_table">
+         <div class="table_head">
+         <div class="title_1" style="color:#fff">
+          a
+        </div>
+        <div class="title_2">
+           <div class="italic color_000" style="text-align:center;">Subject Added</div>
+        </div>
+          
+          <div class="clear"/>
+          
+        </div>
+        
+      
+      
+      <div class="table_body">
+        
+        <div id="column_1">
+          
+          <xsl:call-template name="review_adds_1"/>
+          
+        </div>
+        <div id="column_2">
+          
+          <xsl:call-template name="review_adds_2"/>
+          
+        </div>
+        <div id="column_3">
+          
+          <xsl:call-template name="review_adds_3"/>
+          
+        </div>
+        
+        
+          <div class="clear"/>
+        
+        </div>
+        
+        </div>
+        
+      
+      </div>
+      
+      
+      <div class="clear"/>
       
       
     </div>
-  
   </xsl:template>
   
   
@@ -716,9 +777,72 @@
     <xsl:if test="not($num = $row_quantity + 1)">
       
       
-      <div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}">   </div>
+      <div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}">   
+        <xsl:if test="subject[number($num)]/@flagged = 'true'">FLAGGED</xsl:if>
+      
+      </div>
       
       <xsl:call-template name="volunteer_col_3">
+        <xsl:with-param name="num">
+          <xsl:value-of select="$num + 1"/>
+        </xsl:with-param>
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+  
+  
+  
+  
+  
+  <xsl:template name="review_adds_1">
+    <xsl:param name="num">1</xsl:param> <!-- param has initial value of 1 -->
+    <xsl:if test="not($num = $row_quantity + 1)">
+      
+      
+      <xsl:choose>
+        <xsl:when test="$num mod 2 != 0"><div id="column_1_{$num}" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:when>
+        <xsl:otherwise><div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:otherwise>
+      </xsl:choose>
+      
+      <xsl:call-template name="review_adds_1">
+        <xsl:with-param name="num">
+          <xsl:value-of select="$num + 1"/>
+        </xsl:with-param>
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+  
+  <xsl:template name="review_adds_2">
+    <xsl:param name="num">1</xsl:param> <!-- param has initial value of 1 -->
+    <xsl:if test="not($num = $row_quantity + 1)">
+      
+      
+      <xsl:choose>
+        <xsl:when test="$num mod 2 != 0"><div id="column_1_{$num}" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"> <xsl:value-of select="subject[@study_number = ../section/@study_number][number($num)]/@subject_id"/> </div></xsl:when>
+        <xsl:otherwise><div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"> <xsl:value-of select="subject[@study_number = ../section/@study_number][number($num)]/@subject_id"/> </div></xsl:otherwise>
+      </xsl:choose>
+      
+      <xsl:call-template name="review_adds_2">
+        <xsl:with-param name="num">
+          <xsl:value-of select="$num + 1"/>
+        </xsl:with-param>
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+  
+  <xsl:template name="review_adds_3">
+    <xsl:param name="num">1</xsl:param> <!-- param has initial value of 1 -->
+    <xsl:if test="not($num = $row_quantity + 1)">
+      
+      
+      <div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}">   
+        <xsl:if test="subject[@study_number = ../section/@study_number][number($num)]/@subject_id">
+          <a href="javascript:;" style="font-size:12px; margin-right:5px;">Edit</a> <a href="javascript:;" style="font-size:12px;">Remove</a>
+        </xsl:if>
+      
+      </div>
+      
+      <xsl:call-template name="review_adds_3">
         <xsl:with-param name="num">
           <xsl:value-of select="$num + 1"/>
         </xsl:with-param>
