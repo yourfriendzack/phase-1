@@ -88,8 +88,8 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	        
 	     } else if((responseText[0] == true) && (responseText[1] == 'user')){
 	     
-	     } else if (responseText == false) {
-	       // The reaction for false goes here
+	     } else if (responseText[0] == false) {
+	       ctalk('Your login failed. Please check your email and password and try again.');
 	     }
 	   }
       }
