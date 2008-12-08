@@ -1036,8 +1036,8 @@
       
       
       <xsl:choose>
-        <xsl:when test="$num mod 2 != 0"><input id="column_2_{$num}" class="cell_input cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}" value="{count(subject)}"></input></xsl:when>
-        <xsl:otherwise><input id="column_2_{$num}" class="cell_input" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}" value="{count(subject)}"></input></xsl:otherwise>
+        <xsl:when test="$num mod 2 != 0"><input id="column_2_{$num}" class="cell_input cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}" value="{count(subject[@study_number = ../section/@study_number])}"></input></xsl:when>
+        <xsl:otherwise><input id="column_2_{$num}" class="cell_input" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}" value="{count(subject[@study_number = ../section/@study_number])}"></input></xsl:otherwise>
       </xsl:choose>
       
       <xsl:call-template name="screen_col_2">
