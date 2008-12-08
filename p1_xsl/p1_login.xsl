@@ -20,14 +20,17 @@
   <link rel="stylesheet" type="text/css" href="../p1_css/p1_bgs.css"/>
   <link rel="stylesheet" type="text/css" href="../p1_css/p1_login.css"/>
   
-  <!-- Sam Skin CSS -->
-  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/container/assets/skins/sam/container.css"/>
+<!-- Sam Skin CSS -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/container/assets/skins/sam/container.css"/>
 
-  <!-- Dependencies -->
-  <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<!-- Dependencies -->
+<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js"></script>
 
-  <!-- Source file -->
-  <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/container/container-min.js"></script>
+<!-- Source file -->
+<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/container/container-min.js"></script>
+
+<!-- Source file --> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/animation/animation-min.js"></script> 
 
   <script type="text/javascript" src="../p1_js/p1_global.js"/>
   <script type="text/javascript" src="../p1_js/php_utf8_encode.min.js"/>
