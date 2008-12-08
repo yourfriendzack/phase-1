@@ -180,7 +180,7 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	     
 	     
 	     my_reaction = function my_reaction( responseText ) {
-	       popup.hide();
+	       
 	       var responseText = eval( responseText );
 	       
 	       if ((responseText == true)) {

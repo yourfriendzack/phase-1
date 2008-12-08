@@ -47,19 +47,19 @@
 
 <body class="yui-skin-sam" onload="get_anchor();">
 
-  <div id="popup" style="z-index:99999; overflow:visible;">
+  <div id="poplog" style="z-index:99999; overflow:visible;">
     
-    <div id="popup_bg" class="popup_bg dialog">
+    <div id="poplog_bg" class="popup_bg">
       <div class="content">
         <div class="t"></div>
         <!-- Content START -->
         
-        <div id="popup_text" class="popup_text bold">You have some fields that are not filled out yet.</div>
+        <div id="poplog_text" class="poplog_text bold">You have some fields that are not filled out yet.</div>
         
         
-        <a class="ok_button right" href="javascript:;" onclick="popup_object.hide();">OK</a>
-        <a class="yes_button right nodisp" href="javascript:;" onclick="popup_object.hide();">Yes</a>
-        <a class="no_button right nodisp" href="javascript:;" onclick="popup_object.hide();">No</a>
+        <a id="poplog_ok_button" class="ok_button right nodisp" href="javascript:;" onclick="poplog_object.hide();">OK</a>
+        <a id="poplog_yes_button" class="yes_button right nodisp" href="javascript:;" onclick="poplog_object.hide();">Yes</a>
+        <a id="poplog_no_button" class="no_button right nodisp" href="javascript:;" onclick="poplog_object.hide();">No</a>
         <!-- Content END -->
         <div class="clear"/>
       </div>
@@ -70,15 +70,37 @@
     
   </div>
   
-  <script>var popup_object = new YAHOO.widget.Overlay("popup");
-    popup_object.render(); 
-    popup_object.hide();
+  <script>
+    var poplog_object = new YAHOO.widget.Overlay("poplog");
+    poplog_object.render(); 
+    poplog_object.hide();
 	
-	function popup(who) {
-	  document.getElementById( 'popup_bg' ).style.left = -( ((document.getElementById( 'popup_bg' ).offsetWidth + 6) - who.offsetWidth) / 2 ) + 'px';
-	  document.getElementById( 'popup_bg' ).style.top = '-10px';
-	  popup_object.cfg.setProperty('context', [who, 'bl', 'tl']);
-	  popup_object.show();
+	function poplog( who, my_type, options, text, text_style ) {
+	  
+	  var orientation = [who, 'bl', 'tl'];
+	  // var poplog_title = document.getElementById( 'poplog_text_title' );
+	  var poplog_text = document.getElementById( 'poplog_text' );
+	  var ok_button = document.getElementById( 'poplog_ok_button' );
+	  var yes_button = document.getElementById( 'poplog_yes_button' );
+	  var no_button = document.getElementById( 'poplog_no_button' );
+	  
+	  if (my_type == 'top') {
+	    poplog_text.innerHTML = text;
+	    document.getElementById( 'poplog_bg' ).style.left = -( ((document.getElementById( 'poplog_bg' ).offsetWidth + 6) - who.offsetWidth) / 2 ) + 'px';
+	    document.getElementById( 'poplog_bg' ).style.top = '-10px';
+	  }
+	  
+	  if (options = 'ok') {
+	    ok_button.style.display = 'block';
+	    yes_button.style.display = 'none';
+	    no_button.style.display = 'none';
+	  }
+	  if (text_style == undefined || text_style == null) {
+	     poplog_text.style.fontWeight = 'normal';
+	  }
+	  
+	  poplog_object.cfg.setProperty('context', orientation);
+	  poplog_object.show();
 	}
 </script>
 

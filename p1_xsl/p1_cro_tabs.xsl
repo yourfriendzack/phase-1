@@ -273,7 +273,7 @@
           
           <div class="clear"/>
         </form>
-        <button class="right" onclick="my_submit('add_study', {@user_id})">Submit</button>
+        <button class="right" onclick="my_submit('add_study', {@user_id}); poplog_object.hide();">Submit</button>
         
       </div>
       
