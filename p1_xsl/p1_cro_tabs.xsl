@@ -891,8 +891,8 @@
                   <xsl:for-each select="study">
                     
                     <xsl:choose>
-                      <xsl:when test="position() mod 2 = 1"><a class="box_a_item cell_bg_c" href="../p1_php/p1_cro.php?section=cro_active&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a></xsl:when>
-                      <xsl:otherwise><a class="box_a_item" href="../p1_php/p1_cro.php?section=cro_active&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a></xsl:otherwise>
+                      <xsl:when test="position() mod 2 = 1"><a class="box_a_item cell_bg_c" href="../p1_php/p1_cro.php?section=cro_screen&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a></xsl:when>
+                      <xsl:otherwise><a class="box_a_item" href="../p1_php/p1_cro.php?section=cro_screen&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a></xsl:otherwise>
                     </xsl:choose>
                     
                     
