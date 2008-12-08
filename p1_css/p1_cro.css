@@ -201,6 +201,7 @@ border:none;
 /********************************************************
 * Database Action
 ********************************************************/
+
 .study_action_content #sub_column_1 {
  width:26%;
 }
@@ -211,9 +212,9 @@ border:none;
  width:35%;
  padding-left:10px;
 }
+
 #volunteer_table {
   width: 253px;
-  /*height:578px;*/
   margin:10px 0 20px 0;
 }
 
@@ -292,5 +293,57 @@ height:100%;
 border-right: 2px solid #444;
 }
 #review_adds_table #column_3 {
+height:100%;
+}
+
+/********************************************************
+* Screen Subjects
+********************************************************/
+
+#screen_table {
+  width: 410px;
+  margin:10px 0 20px 0;
+}
+
+#screen_table .table_head {
+  width: 100%;
+  border: 2px solid #fff;
+}
+#screen_table .title_1, #screen_table #column_1 {
+  width:30px;
+  float:left;
+  border-right: 1px solid #fff;
+}
+#screen_table .title_2, #screen_table #column_2{
+  width:150px;
+  float:left;
+  border-right: 2px solid #fff;
+}
+#screen_table .title_3, #screen_table #column_3 {
+  width:70px;
+  float:left;
+}
+#screen_table .title_4, #screen_table #column_4 {
+  width:140px;
+  float:left;
+}
+
+#screen_table .table_body{
+  width: 100%;
+  border: 2px solid #666;
+}
+#screen_table #column_1 {
+height:100%;
+border-right: 1px solid #666;
+}
+#screen_table #column_2 {
+height:100%;
+border-right: 1px solid #666;
+}
+#screen_table #column_3 {
+height:100%;
+border-right: 2px solid #333;
+}
+#screen_table #column_4 {
 height:100%;
 }

@@ -868,15 +868,18 @@
     </ul>
     
     
-    <div id="content">
+    
       <xsl:choose>
         <xsl:when test="section/@study_number and section/@study_number != '' and section/@study_number != ' '">
           
-          <xsl:call-template name="view_active"/>
+          <xsl:call-template name="study_screen"/>
           
         </xsl:when>
         
         <xsl:otherwise>
+          <div id="content">
+            
+            
           <div id="sub_column_1">
             <div class="bold bm_30" style="margin-top:30px">Welcome, <xsl:value-of select="@my_name"/>.</div>
             
@@ -909,6 +912,8 @@
             
           </div>
           
+          
+          </div>
         </xsl:otherwise>
       </xsl:choose>
       
@@ -916,11 +921,167 @@
       
       
       
+    
+    
+    
+    
+    
+  </xsl:template>
+  
+  
+  
+  
+  
+  <xsl:template match="/root" name="study_screen">
+    <div id="content">
+      
+    <div id="sub_column_1">
+      <div class="bold bm_30" style="margin-top:30px">Welcome, <xsl:value-of select="@my_name"/>.</div>
+      <div class="bm_20"><span class="mini_title">Study # </span><span style="color:#ff55ff"><xsl:value-of select="study/@study_number"/></span></div>
+      <div class="bm_20"><span class="mini_title">Study Leader </span><span class="color_555"><xsl:value-of select="study/@study_leader"/></span></div>
+      <div class="bm_20"><span class="mini_title">Sponsor </span><span class="color_555"><xsl:value-of select="study/@sponsor"/></span></div>
+      <div class="bm_20"><span class="mini_title">Drug </span><span class="color_555"><xsl:value-of select="study/@drug"/></span></div>
+      <div class="bm_20"><span class="mini_title">Study Dates </span><div><span class="color_555"><xsl:value-of select="study/@start_date"/> - <xsl:value-of select="study/@end_date"/></span></div></div>
     </div>
     
-    
-    
-    
+    <div id="sub_column_2">
+      <h2 class="bm_20">Review Screens</h2>
+      <div id="table_data" class="nodisp" row_quantity="{$row_quantity}"/>
+      
+      <div id="screen_table">
+        <div class="table_head">
+        <div class="title_1" style="color:#fff">
+          a
+        </div>
+        <div class="title_2">
+           <div class="italic color_000" style="text-align:center;">Subject</div>
+        </div>
+        <div class="title_3">
+           <div class="italic color_000" style="text-align:center; color:#fff">a</div>
+        </div>
+        <div class="title_4">
+           <div class="italic color_000" style="text-align:center;">Eligible</div>
+        </div>
+          
+          <div class="clear"/>
+          
+        </div>
+        
+      
+      
+      <div class="table_body">
+        
+        <div id="column_1">
+          
+          <xsl:call-template name="screen_col_1"/>
+          
+        </div>
+        <div id="column_2">
+          
+          <xsl:call-template name="screen_col_2"/>
+          
+        </div>
+        <div id="column_3">
+          
+          <xsl:call-template name="screen_col_3"/>
+          
+        </div>
+        <div id="column_4">
+          
+          <xsl:call-template name="screen_col_4"/>
+          
+        </div>
+        
+        
+          <div class="clear"/>
+        
+        </div>
+        
+      </div>
+      
+      <!--<input id="submit_subjects_button" class="right" type="button" value="Submit" onclick="my_submit('add_subject', {/root/@user_id}, {/root/study/@study_number})"/>
+      <input id="add_row_button" class="" type="button" value="+ add another row" onclick="new_row();"/>-->
+    </div>
+      
+      
+      <div class="clear"/>
+      
+      
+    </div>
+  </xsl:template>
+  
+  
+  <xsl:template name="screen_col_1">
+    <xsl:param name="num">1</xsl:param> <!-- param has initial value of 1 -->
+    <xsl:if test="not($num = $row_quantity + 1)">
+      
+      
+      <xsl:choose>
+        <xsl:when test="$num mod 2 != 0"><div id="column_1_{$num}" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:when>
+        <xsl:otherwise><div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:otherwise>
+      </xsl:choose>
+      
+      <xsl:call-template name="screen_col_1">
+        <xsl:with-param name="num">
+          <xsl:value-of select="$num + 1"/>
+        </xsl:with-param>
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+  
+  
+  <xsl:template name="screen_col_2">
+    <xsl:param name="num">1</xsl:param> <!-- param has initial value of 1 -->
+    <xsl:if test="not($num = $row_quantity + 1)">
+      
+      
+      <xsl:choose>
+        <xsl:when test="$num mod 2 != 0"><div id="column_2_{$num}" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"> <xsl:value-of select="subject[@study_number = ../section/@study_number][number($num)]/@subject_id"/> </div></xsl:when>
+        <xsl:otherwise><div id="column_2_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"> <xsl:value-of select="subject[@study_number = ../section/@study_number][number($num)]/@subject_id"/> </div></xsl:otherwise>
+      </xsl:choose>
+      
+      <xsl:call-template name="screen_col_2">
+        <xsl:with-param name="num">
+          <xsl:value-of select="$num + 1"/>
+        </xsl:with-param>
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+  
+  <xsl:template name="screen_col_3">
+    <xsl:param name="num">1</xsl:param> <!-- param has initial value of 1 -->
+    <xsl:if test="not($num = $row_quantity + 1)">
+      
+      
+      <div id="column_3_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}">   
+        <xsl:if test="subject[@study_number = ../section/@study_number][number($num)]/@flagged = 'true'">FLAGGED</xsl:if>
+      
+      </div>
+      
+      <xsl:call-template name="screen_col_3">
+        <xsl:with-param name="num">
+          <xsl:value-of select="$num + 1"/>
+        </xsl:with-param>
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+  
+  <xsl:template name="screen_col_4">
+    <xsl:param name="num">1</xsl:param> <!-- param has initial value of 1 -->
+    <xsl:if test="not($num = $row_quantity + 1)">
+      
+      
+      <div id="column_4_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}">   
+        <xsl:if test="subject[@study_number = ../section/@study_number][number($num)]/@flagged = 'true'"><xsl:value-of select="subject[@study_number = ../section/@study_number][number($num)]/@eligible"/></xsl:if>
+      
+      </div>
+      
+      <xsl:call-template name="screen_col_4">
+        <xsl:with-param name="num">
+          <xsl:value-of select="$num + 1"/>
+        </xsl:with-param>
+      </xsl:call-template>
+    </xsl:if>
   </xsl:template>
   
 </xsl:stylesheet>
