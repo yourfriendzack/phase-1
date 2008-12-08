@@ -120,6 +120,7 @@
      <div id="tab_b"><a href="../p1_php/p1_logout.php">Logout</a></div> 
      <div id="tab_a"><a href="javascript:;">Profile</a></div>
      <xsl:choose>
+       <xsl:when test="section/text() = 'cro_screen'"><xsl:call-template name="cro_screen"/></xsl:when>
        <xsl:when test="section/text() = 'cro_add'"><xsl:call-template name="cro_add"/></xsl:when>
        <xsl:when test="section/text() = 'cro_register'"><xsl:call-template name="cro_register"/>
          <script>var calendar_a = new YAHOO.widget.Calendar('calendar_a', "callContainer_a"); 

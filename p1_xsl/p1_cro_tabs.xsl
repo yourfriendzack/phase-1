@@ -854,4 +854,73 @@
   
   
   
+  <xsl:template match="/root" name="cro_screen">
+
+    
+    <ul id="menu">
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php">Home</a></li>
+      <li><a id="selected" class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_screen">Screen New Subjects(s)</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_add">Add Subjects(s) to Database</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_action">Database Actions</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_register">Register a New Study</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_active">Active Studies</a></li>
+      <li><a class="menu_link cro" href="../p1_php/p1_cro.php?section=cro_close">Close a Study</a></li>
+    </ul>
+    
+    
+    <div id="content">
+      <xsl:choose>
+        <xsl:when test="section/@study_number and section/@study_number != '' and section/@study_number != ' '">
+          
+          <xsl:call-template name="view_active"/>
+          
+        </xsl:when>
+        
+        <xsl:otherwise>
+          <div id="sub_column_1">
+            <div class="bold bm_30" style="margin-top:30px">Welcome, <xsl:value-of select="@my_name"/>.</div>
+            
+          </div>
+          <div id="sub_column_2">
+            
+            <xsl:choose>
+              <xsl:when test="study">
+                <h2 class="bm_20">Screen Subjects</h2>
+                <div class="bm_10">Please select a study or <a href="../p1_php/p1_cro.php?section=cro_register">register a new study</a>.</div>
+                <div class="box_a">
+                  <xsl:for-each select="study">
+                    
+                    <xsl:choose>
+                      <xsl:when test="position() mod 2 = 1"><a class="box_a_item cell_bg_c" href="../p1_php/p1_cro.php?section=cro_active&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a></xsl:when>
+                      <xsl:otherwise><a class="box_a_item" href="../p1_php/p1_cro.php?section=cro_active&amp;study_number={@study_number}"><xsl:value-of select="@study_number"/></a></xsl:otherwise>
+                    </xsl:choose>
+                    
+                    
+                    
+                    
+                  </xsl:for-each>
+                </div>
+              </xsl:when>
+              <xsl:otherwise>
+                There are no studies which match your account.
+              </xsl:otherwise>
+            </xsl:choose>
+            
+            
+          </div>
+          
+        </xsl:otherwise>
+      </xsl:choose>
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+  </xsl:template>
+  
 </xsl:stylesheet>
