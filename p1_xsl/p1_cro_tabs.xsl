@@ -1036,8 +1036,8 @@
       
       
       <xsl:choose>
-        <xsl:when test="$num mod 2 != 0"><div id="column_2_{$num}" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"> <xsl:value-of select="subject[@study_number = ../section/@study_number][number($num)]/@subject_id"/> </div></xsl:when>
-        <xsl:otherwise><div id="column_2_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"> <xsl:value-of select="subject[@study_number = ../section/@study_number][number($num)]/@subject_id"/> </div></xsl:otherwise>
+        <xsl:when test="$num mod 2 != 0"><input id="column_2_{$num}" class="cell_input cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}" value="{subject[@study_number = ../section/@study_number][number($num)]/@subject_id}"></input></xsl:when>
+        <xsl:otherwise><input id="column_2_{$num}" class="cell_input" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}" value="{subject[@study_number = ../section/@study_number][number($num)]/@subject_id}"></input></xsl:otherwise>
       </xsl:choose>
       
       <xsl:call-template name="screen_col_2">
