@@ -185,6 +185,7 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	       
 	       if ((responseText == true)) {
 	         ctalk('Your study was added');
+	         document.getElementById('register_study_form').reset();
 	       }
 	       else {
 	         ctalk('Failure. There was an error.');
