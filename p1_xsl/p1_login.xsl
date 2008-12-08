@@ -49,7 +49,6 @@
    <div id="column_1">
       
      <div id="logo"/>
-     <div style="color:white;">Wash-out Verification System for Clinical Trials</div>
      
    
        
