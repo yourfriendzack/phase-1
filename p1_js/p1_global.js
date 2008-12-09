@@ -107,7 +107,9 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	     var uncompleted_rows = [];
 	     
 	     for (var i=1; i <= column_quantity; i++) {
+	       alert('ok');
 	       eval( 'var column_' + i + '= [];' );
+	       alert(column_2);
 	     }
 	     for (var i=1; i <= row_quantity; i++) {
 	     
@@ -132,7 +134,7 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	      
 	    }
 	    
-	    var url = url + "&subject_number=" + js_array_to_php_array( column_2 );
+	    var url = url + "&subject_id=" + js_array_to_php_array( column_2 );
 	   // if (icells_completed_in_row == icell_columns) {
 	     //   var url = url + document.getElementById('column_1_' + i).innerHTML + '*';
 	     //   var url = url + document.getElementById('column_' + 2 + '_' + i).value + '*';
@@ -264,7 +266,7 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	  else if (arg_a == "remove_study") {
 	     var url = submit_url + "?location=" + arg_a;
 	     var url = url + "&user_id=" + arg_b;
-	//     var url = url + "&study_number=" + document.getElementById('study_number').value;
+	     var url = url + "&study_number=" + document.getElementById('study_number').value;
 	      
 	     my_reaction = function my_reaction( responseText ) {
 	       popup.hide();

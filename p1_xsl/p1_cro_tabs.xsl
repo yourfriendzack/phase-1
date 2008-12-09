@@ -1056,7 +1056,7 @@
     <xsl:if test="not($num = $row_quantity + 1)">
       
       
-      <div id="cell_3_{$num}" class="cell_img" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}">   
+      <div id="cell_3_{$num}" class="cell_img">   
         <xsl:if test="subject[@study_number = ../section/@study_number][number($num)]/@flagged = 'true'">
           <img src="../p1_gfx/flag.png"></img>
         </xsl:if>
