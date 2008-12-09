@@ -107,8 +107,9 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	     var uncompleted_rows = [];
 	     
 	     for (var i=1; i <= column_quantity; i++) {
+	       var column_var_string = 'var column_' + i + '= [];';
 	       alert('ok');
-	       eval( 'var column_' + i + '= [];' );
+	       eval( column_var_string );
 	       alert(column_2);
 	     }
 	     for (var i=1; i <= row_quantity; i++) {
