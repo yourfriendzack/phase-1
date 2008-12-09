@@ -146,14 +146,14 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	      if (responseText[0] == true) {
     	      ctalk('Screen succesful.');
 
-    	      for (var i=1; i < responseText.length; i++) {
-    	         for (var i=1; i <= row_quantity; i++) {
-    	           if (responseText[i][0] == document.getElementById('cell_2_' + i).value) {
-    	             getNamedChildren('cell_3_' + i)[0].img.style.display = 'block';
-    	             document.getElementById('cell_4_' + i).innerHTML = responseText[i][1];
-    	           }
-    	         }
-    	      }
+    	     // for (var i=1; i < responseText.length; i++) {
+    	        // for (var i=1; i <= row_quantity; i++) {
+    	          // if (responseText[i][0] == document.getElementById('cell_2_' + i).value) {
+    	             //getNamedChildren('cell_3_' + i)[0].img.style.display = 'block';
+    	           //  document.getElementById('cell_4_' + i).innerHTML = responseText[i][1];
+    	         //  }
+    	       //  }
+    	     // }
 	      }
 	      else if (responseText[0] == false) {
 	          ctalk('There was an error.');
