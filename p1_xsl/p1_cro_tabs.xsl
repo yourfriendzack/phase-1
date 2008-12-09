@@ -948,7 +948,7 @@
     <div id="sub_column_2">
       <div id="table_data" class="nodisp" row_quantity="{$row_quantity}"/>
       
-      <h2 class="bm_20">Screen Potential Subjects</h2>
+      <h2 class="bm_20">Screen Subjects</h2>
       
       <div id="screen_table">
         <div class="table_head">
