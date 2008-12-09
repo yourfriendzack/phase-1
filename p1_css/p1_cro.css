@@ -78,19 +78,24 @@ height:100%;
 
 .cell_text {
  margin:0;
- /*padding:5px 0 6px 0;*/
  text-align:center; 
  font-size:15px;
  height:30px;
  line-height:30px;
 }
-
 .cell_input {
  margin:0;
  border: none;
- padding:5px 5px 0px 5px;
- line-height:25px;
- height:25px;
+ padding:6px 5px 0px 5px;
+ line-height:24px;
+ height:24px;
+}
+.cell_img {
+ margin:0;
+ border: none;
+ padding:2px 0 0 0;
+ height:28px;
+ text-align:center; 
 }
 .cell_input:hover {
  background-color:#ddd;

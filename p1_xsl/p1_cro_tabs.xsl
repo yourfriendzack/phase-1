@@ -119,6 +119,7 @@
       <input id="submit_subjects_button" class="right" type="button" value="Submit" onclick="my_submit('add_subject', {/root/@user_id}, {/root/study/@study_number})"/>
       <input id="add_row_button" class="" type="button" value="+ add another row" onclick="new_row();"/>
     </div>
+    
   <div class="clear"/>
   </xsl:template>
   
@@ -945,8 +946,9 @@
     </div>
     
     <div id="sub_column_2">
-      <h2 class="bm_20">Review Screens</h2>
       <div id="table_data" class="nodisp" row_quantity="{$row_quantity}"/>
+      
+      <h2 class="bm_20">Screen Potential Subjects</h2>
       
       <div id="screen_table">
         <div class="table_head">
@@ -999,9 +1001,10 @@
         
       </div>
       
-      <!--<input id="submit_subjects_button" class="right" type="button" value="Submit" onclick="my_submit('add_subject', {/root/@user_id}, {/root/study/@study_number})"/>
-      <input id="add_row_button" class="" type="button" value="+ add another row" onclick="new_row();"/>-->
+      <input id="submit_subjects_button" class="right" type="button" value="Submit" onclick="my_submit('screen', {/root/@user_id}, {/root/study/@study_number})"/>
+      <input id="add_row_button" class="" type="button" value="+ add another row" onclick="new_row();"/>
     </div>
+      
       
       
       <div class="clear"/>
@@ -1017,8 +1020,8 @@
       
       
       <xsl:choose>
-        <xsl:when test="$num mod 2 != 0"><div id="column_1_{$num}" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:when>
-        <xsl:otherwise><div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:otherwise>
+        <xsl:when test="$num mod 2 != 0"><div id="cell_1_{$num}" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:when>
+        <xsl:otherwise><div id="cell_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:otherwise>
       </xsl:choose>
       
       <xsl:call-template name="screen_col_1">
@@ -1036,8 +1039,8 @@
       
       
       <xsl:choose>
-        <xsl:when test="$num mod 2 != 0"><input id="column_2_{$num}" class="cell_input cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}" value="{subject[@study_number = ../section/@study_number][number($num)]/@subject_id}"></input></xsl:when>
-        <xsl:otherwise><input id="column_2_{$num}" class="cell_input" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}" value="{subject[@study_number = ../section/@study_number][number($num)]/@subject_id}"></input></xsl:otherwise>
+        <xsl:when test="$num mod 2 != 0"><input id="cell_2_{$num}" class="cell_input cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}" value="{subject[@study_number = ../section/@study_number][number($num)]/@subject_id}"></input></xsl:when>
+        <xsl:otherwise><input id="cell_2_{$num}" class="cell_input" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}" value="{subject[@study_number = ../section/@study_number][number($num)]/@subject_id}"></input></xsl:otherwise>
       </xsl:choose>
       
       <xsl:call-template name="screen_col_2">
@@ -1053,8 +1056,10 @@
     <xsl:if test="not($num = $row_quantity + 1)">
       
       
-      <div id="column_3_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}">   
-        <xsl:if test="subject[@study_number = ../section/@study_number][number($num)]/@flagged = 'true'">FLAGGED</xsl:if>
+      <div id="cell_3_{$num}" class="cell_img" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}">   
+        <xsl:if test="subject[@study_number = ../section/@study_number][number($num)]/@flagged = 'true'">
+          <img src="../p1_gfx/flag.png"></img>
+        </xsl:if>
       
       </div>
       
@@ -1071,7 +1076,7 @@
     <xsl:if test="not($num = $row_quantity + 1)">
       
       
-      <div id="column_4_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}">   
+      <div id="cell_4_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}">   
         <xsl:if test="subject[@study_number = ../section/@study_number][number($num)]/@flagged = 'true'"><xsl:value-of select="subject[@study_number = ../section/@study_number][number($num)]/@eligible"/></xsl:if>
       
       </div>
