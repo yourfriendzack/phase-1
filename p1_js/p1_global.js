@@ -132,15 +132,8 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	      
 	    }
 	    
+	    
 	    var url = url + "&subject_id=" + js_array_to_php_array( column_2 );
-	   // if (icells_completed_in_row == icell_columns) {
-	     //   var url = url + document.getElementById('column_1_' + i).innerHTML + '*';
-	     //   var url = url + document.getElementById('column_' + 2 + '_' + i).value + '*';
-	     //   var url = url + document.getElementById('column_' + 3 + '_' + i).value + '*';
-	     //   var url = url + document.getElementById('column_' + 4 + '_' + i).value + '*';
-	     //   var url = url + '*';
-	     // }
-	      
 	    if (uncompleted_rows.length > 0) {
 	      ajax_oktogo = false;
 	      poplog(document.getElementById('submit_subjects_button'),'top','ok', 'Some fields are not filled out correctly');
@@ -152,10 +145,14 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	      var responseText = eval( responseText );
 	      if (responseText[0] == true) {
     	      ctalk('Screen succesful.');
-    	      alert(column_2);
+
     	      for (var i=1; i < responseText.length; i++) {
-    	       // responseText[i][0]
-    	       alert(column_2);
+    	         for (var i=1; i <= row_quantity; i++) {
+    	           if (responseText[i][0] == document.getElementById('cell_2_' + i).value) {
+    	             getNamedChildren('cell_3_' + i)[0].img.style.display = 'block';
+    	             document.getElementById('cell_4_' + i).innerHTML = responseText[i][1];
+    	           }
+    	         }
     	      }
 	      }
 	      else if (responseText[0] == false) {
@@ -357,6 +354,38 @@ function get_anchor() {
 //*********************************************************
 // Util
 //*********************************************************
+
+function collectionToArray(collection) 
+	{ 
+	    var ary = []; 
+	    for(var i=0, len = collection.length; i < len; i++) 
+	    { 
+	        ary.push(collection[i]); 
+	    } 
+	    return ary; 
+	}
+
+function isString(o) {return 'string' == typeof o;}
+
+function getNamedChildren(what_parent, child_name) {
+  var named_children = [];
+  if ( isString(what_parent) ) {
+    var childNodeArray = collectionToArray( document.getElementById(what_parent).childNodes );
+  }
+  else {
+    var childNodeArray = collectionToArray( what_parent.childNodes );
+  }
+ // alert(childNodeArray[0].tagName + ' ' + isText( childNodeArray[0] ));
+  for (var i=0; i < childNodeArray.length; i++) {
+   // if (childNodeArray[i].hasAttribute('my_name') && childNodeArray[i].getAttribute('my_name') == child_name) {
+   if (String( childNodeArray[i].tagName ) !== 'undefined' && childNodeArray[i].getAttribute('my_name') == child_name) {
+       named_children.push(childNodeArray[i]);
+    }
+  }
+  return named_children;
+}
+
+
 
 function js_array_to_php_array (a) {
     var a_php = "";

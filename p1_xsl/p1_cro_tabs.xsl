@@ -1056,10 +1056,15 @@
     <xsl:if test="not($num = $row_quantity + 1)">
       
       
-      <div id="cell_3_{$num}" class="cell_img">   
-        <xsl:if test="subject[@study_number = ../section/@study_number][number($num)]/@flagged = 'true'">
-          <img src="../p1_gfx/flag.png"></img>
-        </xsl:if>
+      <div id="cell_3_{$num}" class="cell_img">
+        <xsl:choose>
+          <xsl:when test="subject[@study_number = ../section/@study_number][number($num)]/@flagged = 'true'">
+            <img name="img" src="../p1_gfx/flag.png"></img>
+          </xsl:when>
+          <xsl:otherwise>
+            <img name="img" class="nodisp" src="../p1_gfx/flag.png"></img>
+          </xsl:otherwise>
+        </xsl:choose>
       
       </div>
       
