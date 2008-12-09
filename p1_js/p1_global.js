@@ -150,10 +150,15 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	    my_reaction = function my_reaction( responseText ) 
 	    {
 	      var responseText = eval( responseText );
-	      if (responseText == true) {
-    	      ctalk('Screen succesful.');  	      
+	      if (responseText[0] == true) {
+    	      ctalk('Screen succesful.');
+    	      alert(column_2);
+    	      for (var i=1; i < responseText.length; i++) {
+    	       // responseText[i][0]
+    	       alert(column_2);
+    	      }
 	      }
-	      else if (responseText == false) {
+	      else if (responseText[0] == false) {
 	          ctalk('There was an error.');
 	      }
 	    }    
