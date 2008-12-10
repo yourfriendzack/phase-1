@@ -1062,7 +1062,7 @@
             <img my_name="img" src="../p1_gfx/flag.png"></img>
           </xsl:when>
           <xsl:when test="subject[@study_number = ../section/@study_number][number($num)]/@flagged = 'false'">
-            <img my_name="img" src="../p1_gfx/flag.png"></img>
+            <img my_name="img" src="../p1_gfx/green_flag.png"></img>
           </xsl:when>
           <xsl:otherwise>
             <img my_name="img" class="nodisp" src="../p1_gfx/flag.png"></img>
