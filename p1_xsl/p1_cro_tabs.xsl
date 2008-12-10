@@ -1059,10 +1059,10 @@
       <div id="cell_3_{$num}" class="cell_img">
         <xsl:choose>
           <xsl:when test="subject[@study_number = ../section/@study_number][number($num)]/@flagged = 'true'">
-            <img name="img" src="../p1_gfx/flag.png"></img>
+            <img my_name="img" src="../p1_gfx/flag.png"></img>
           </xsl:when>
           <xsl:otherwise>
-            <img name="img" class="nodisp" src="../p1_gfx/flag.png"></img>
+            <img my_name="img" class="nodisp" src="../p1_gfx/flag.png"></img>
           </xsl:otherwise>
         </xsl:choose>
       
