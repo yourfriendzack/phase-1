@@ -146,19 +146,21 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	      if (responseText[0] == true) {
     	     ctalk('Screen succesful.');
              
-    	     if (responseText.length > 1) {
-    	       var subject_array = responseText[1].split( ',' );
-               var eligibile_array = responseText[2].split( ',' );
-    	       for (var i=1; i <= row_quantity; i++) {
-    	       
+             for (var i=1; i <= row_quantity; i++) {      
     	         if (document.getElementById('cell_' + 2 + '_' + i).value.replace(/\s+/g,'').length > 0) {
 	               getNamedChildren('cell_3_' + i, 'img')[0].style.display = 'inline';
 	               getNamedChildren('cell_3_' + i, 'img')[0].src = '../p1_gfx/green_flag.png';
 	             }
-	             
+	         }
+    	     if (responseText.length > 1) {
+    	       var subject_array = responseText[1].split( ',' );
+               var eligibile_array = responseText[2].split( ',' );
+    	       for (var i=1; i <= row_quantity; i++) {
+   
     	         for (var j=0; j < subject_array.length; j++) {
     	           if (subject_array[j] == document.getElementById('cell_2_' + i).value) {
     	             getNamedChildren('cell_3_' + i, 'img')[0].style.display = 'inline';
+    	             getNamedChildren('cell_3_' + i, 'img')[0].src = '../p1_gfx/red_flag.png';
     	             document.getElementById('cell_4_' + i).innerHTML = eligibile_array[j];
     	           }
     	         }
