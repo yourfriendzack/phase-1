@@ -160,7 +160,7 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
     	         for (var j=0; j < subject_array.length; j++) {
     	           if (subject_array[j] == document.getElementById('cell_2_' + i).value) {
     	             getNamedChildren('cell_3_' + i, 'img')[0].style.display = 'inline';
-    	             getNamedChildren('cell_3_' + i, 'img')[0].src = '../p1_gfx/red_flag.png';
+    	             getNamedChildren('cell_3_' + i, 'img')[0].src = '../p1_gfx/flag.png';
     	             document.getElementById('cell_4_' + i).innerHTML = eligibile_array[j];
     	           }
     	         }
