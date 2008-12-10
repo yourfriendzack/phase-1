@@ -144,14 +144,16 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	    {
 	      var responseText = eval( responseText );
 	      if (responseText[0] == true) {
-    	      ctalk('Screen succesful.');
-
+    	     ctalk('Screen succesful.');
+             
     	     if (responseText.length > 1) {
+    	       var subject_array = responseText[1].split( ',' );
+               var eligibile_array = responseText[2].split( ',' );
     	       for (var i=1; i <= row_quantity; i++) {
-    	         for (var j=0; j < responseText[1].length; j++) {
-    	           if (responseText[1][j] == document.getElementById('cell_2_' + i).value) {
+    	         for (var j=0; j < subject_array.length; j++) {
+    	           if (subject_array[j] == document.getElementById('cell_2_' + i).value) {
     	             getNamedChildren('cell_3_' + i)[0].img.style.display = 'block';
-    	             document.getElementById('cell_4_' + i).innerHTML = responseText[2][j];
+    	             document.getElementById('cell_4_' + i).innerHTML = eligibile_array[j];
     	           }
     	         }
     	       }
