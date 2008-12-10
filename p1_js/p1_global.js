@@ -152,7 +152,7 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
     	       for (var i=1; i <= row_quantity; i++) {
     	         for (var j=0; j < subject_array.length; j++) {
     	           if (subject_array[j] == document.getElementById('cell_2_' + i).value) {
-    	             getNamedChildren('cell_3_' + i, 'img')[0].style.display = 'block';
+    	             getNamedChildren('cell_3_' + i, 'img')[0].style.display = 'inline';
     	             document.getElementById('cell_4_' + i).innerHTML = eligibile_array[j];
     	           }
     	         }
