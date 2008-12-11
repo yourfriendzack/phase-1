@@ -84,7 +84,7 @@
              <div class="italic color_000" style="text-align:center;">Out-Patient Date</div>
           </div>
           <div class="title_4">
-            <div class="italic color_000" style="text-align:center;">Washout Duration</div>
+            <div class="italic color_000" style="text-align:center;">Washout (in days)</div>
           </div>
           <div class="title_5">
             <div class="italic color_fff" style="text-align:center;">a</div>
@@ -102,8 +102,8 @@
             
             <div id="example_1" style="background-color:#fff; height:30px; line-height:30px; text-align:center">1</div>
             <div id="example_2" style="background-color:#fff; height:30px; line-height:30px;">JTW-121783-4323</div>
-            <div id="example_3" style="background-color:#fff; height:30px;"></div>
-            <div id="example_4" style="background-color:#fff; height:30px; line-height:30px;"></div>
+            <div id="example_3" style="background-color:#fff; height:30px; line-height:30px;">10/19/08</div>
+            <div id="example_4" style="background-color:#fff; height:30px; line-height:30px;">28</div>
             <div id="example_5" style="background-color:#fff; height:30px; line-height:30px;"></div>
             
             <div class="clear"/>
@@ -157,8 +157,8 @@
       
       
       <xsl:choose>
-        <xsl:when test="$num mod 2 != 0"><div id="column_1_{$num}" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:when>
-        <xsl:otherwise><div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:otherwise>
+        <xsl:when test="$num mod 2 != 0"><div id="cell_1_{$num}" class="cell_text cell_bg_b" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:when>
+        <xsl:otherwise><div id="cell_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:otherwise>
       </xsl:choose>
       
       <xsl:call-template name="add_col_1">
@@ -174,8 +174,8 @@
     <xsl:if test="not($num = 20)">
       
       <xsl:choose>
-        <xsl:when test="$num mod 2 != 0"><input id="column_2_{$num}" class="cell_input cell_bg_b" type="text" row="{$num}"/></xsl:when>
-        <xsl:otherwise><input id="column_2_{$num}" class="cell_input" type="text" row="{$num}"/></xsl:otherwise>
+        <xsl:when test="$num mod 2 != 0"><input id="cell_2_{$num}" class="cell_input cell_bg_b" type="text" row="{$num}"/></xsl:when>
+        <xsl:otherwise><input id="cell_2_{$num}" class="cell_input" type="text" row="{$num}"/></xsl:otherwise>
       </xsl:choose>
       
       <xsl:call-template name="add_col_2">
@@ -191,8 +191,8 @@
     <xsl:if test="not($num = 20)">
       
       <xsl:choose>
-        <xsl:when test="$num mod 2 != 0"><input id="column_3_{$num}" class="cell_input cell_bg_b" type="text" row="{$num}"/></xsl:when>
-        <xsl:otherwise><input id="column_3_{$num}" class="cell_input cell_bg_a" type="text" row="{$num}"/></xsl:otherwise>
+        <xsl:when test="$num mod 2 != 0"><input id="cell_3_{$num}" class="cell_input cell_bg_b" type="text" row="{$num}"/></xsl:when>
+        <xsl:otherwise><input id="cell_3_{$num}" class="cell_input cell_bg_a" type="text" row="{$num}"/></xsl:otherwise>
       </xsl:choose>
       
       <xsl:call-template name="add_col_3">
@@ -208,8 +208,8 @@
     <xsl:if test="not($num = 20)">
       
       <xsl:choose>
-        <xsl:when test="$num mod 2 != 0"><input id="column_4_{$num}" class="cell_input cell_bg_b" type="text" row="{$num}"/></xsl:when>
-        <xsl:otherwise><input id="column_4_{$num}" class="cell_input" type="text" row="{$num}"/></xsl:otherwise>
+        <xsl:when test="$num mod 2 != 0"><input id="cell_4_{$num}" class="cell_input cell_bg_b" type="text" row="{$num}"/></xsl:when>
+        <xsl:otherwise><input id="cell_4_{$num}" class="cell_input" type="text" row="{$num}"/></xsl:otherwise>
       </xsl:choose>
       
       <xsl:call-template name="add_col_4">
@@ -224,13 +224,13 @@
     <xsl:param name="num">1</xsl:param> <!-- param has initial value of 1 -->
     <xsl:if test="not($num = $row_quantity + 1)">
       
-      <div id="column_5_{$num}" class="" style="width:100%; height:30px; padding:0 0 0 5px;" row="{$num}">
-        <a href="javascript:;">
+    
+        <a id="cell_5_{$num}" class="hover" href="javascript:;" style="text-align:center; height:28px; padding:2px 0 0 0; text-decoration:none; display: block;">
           <img my_name="img" src="../p1_gfx/circle.png"/>
         </a>
         
         
-      </div>
+     
       
       <xsl:call-template name="add_col_5">
         <xsl:with-param name="num">

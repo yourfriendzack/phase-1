@@ -179,73 +179,63 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
       else if (arg_a == "add_subject") 
      {
 	   var url = cro_submit_url + "?location=" + arg_a;
-       var url = url + "&user_id=" + arg_b;
+	   var url = url + "&user_id=" + arg_b;
 	   var url = url + "&study_number=" + arg_c;
-	   var url = url + "&subjects=";
-	   
-       var row_quantity = document.getElementById('table_data').getAttribute('row_quantity');
-       var column_quantity = 5;
-       var add_quantity = 0;
-       
-	   for (var i=1; i <= row_quantity; i++) {
-	     var fields_completed = 0;
-	     for (var j=1; j <= column_quantity; j++) {
 	     
-	        if (j == 2 || j == 3 || j == 4) {
-	           if (document.getElementById('column_' + j + '_' + i).value.replace(/\s+/g,'').length !== 0) {
-	              fields_completed = fields_completed + 1;
-	            //  alert(document.getElementById('column_' + j + '_' + i));
+	   var row_quantity = document.getElementById('table_data').getAttribute('row_quantity');
+	   var column_quantity = 5;
+	   var icells_in_row = 4;
+	   var uncompleted_rows = [];
+	     
+	     for (var i=1; i <= column_quantity; i++) {
+	       eval( 'var column_' + i + '= [];' );
+	     }
+	     for (var i=1; i <= row_quantity; i++) {
+	     
+	       var icells_completed_in_row = 0;
+	       
+	       // Validate each icell of row here
+	       for (var j=1; j <= column_quantity; j++) {	         
+	         if (j == 2 || j == 3 || j == 4) {
+	           if (document.getElementById('cell_' + j + '_' + i).value.replace(/\s+/g,'').length !== 0) {
+	              icells_completed_in_row = icells_completed_in_row + 1;
 	           }
-	        }
-	        
-	    }
-	 
-	    if (fields_completed == 3) {
-	      var url = url + document.getElementById('column_1_' + i).innerHTML + '*';
-	      var url = url + document.getElementById('column_' + 2 + '_' + i).value + '*';
-	      var url = url + document.getElementById('column_' + 3 + '_' + i).value + '*';
-	      var url = url + document.getElementById('column_' + 4 + '_' + i).value + '*';
-	      var url = url + '*';
-	      
-	      add_quantity = add_quantity + 1;
-	    }
-	    else if (fields_completed > 0 && fields_completed < 3) {
-	      ajax_oktogo = false;
-	      popup(document.getElementById('submit_subjects_button'));
-	    }
-	   
-	   }
-	   
-	   if (add_quantity == 0) {
-	     ajax_oktogo = false;
-	     popup(document.getElementById('submit_subjects_button'));
-	   }
-	   var url = url + "&add_quantity=" + add_quantity;
-       
-       
-       
-	   my_reaction = function my_reaction( responseText ) 
-	   {
-	     popup.hide();
-	     var responseText = eval( responseText );
-	     
-	     if ((responseText[0] == true)) {
-	     
-	      alert('It worked');
-	        
-	     } else if((responseText[0] == false)){
-	     
-	      alert('It did not work.  False was returned.');
-	        
-	     }
-	     if (responseText.length > 1) {
-	       var rows = "";
-	       for (var i=1; i < responseText.length; i++) {
-	         var rows = rows + responseText[i] + ', ';
+	         }  
 	       }
-	       alert('It worked, but some of the subjects you attempted to add were already in the database. Row # ' + rows);
-	     }
-	   }
+	       if (getNamedChildren( 'cell_' + 5 + '_' + i, 'img' )[0].src == '../p1_gfx/check.png' ) {
+	              icells_completed_in_row = icells_completed_in_row + 1;
+	       }
+	  
+	  
+	      if (icells_completed_in_row == icells_in_row) {
+	        column_2.push( document.getElementById('cell_' + 2 + '_' + i).value );
+	        column_3.push( document.getElementById('cell_' + 3 + '_' + i).value );
+	        column_4.push( document.getElementById('cell_' + 4 + '_' + i).value );
+	      }
+	      else if (icells_completed_in_row > 0 && icells_completed_in_row < icells_in_row) {
+	        uncompleted_rows.push( i );
+	      }
+	      
+	    }
+	    
+	    
+	    var url = url + "&subject_id=" + js_array_to_php_array( column_2 );
+	    if (uncompleted_rows.length > 0) {
+	      ajax_oktogo = false;
+	      poplog(document.getElementById('submit_subjects_button'),'top','ok', 'Some fields are not filled out correctly');
+	    }
+	  
+	  
+	    my_reaction = function my_reaction( responseText ) 
+	    {
+	      var responseText = eval( responseText );
+	      if (responseText == true) {
+    	     ctalk('Subject(s) added succesfully.');
+	      }
+	      else if (responseText == false) {
+	          ctalk('There was an error.');
+	      }
+	    }
       }
       
       else if (arg_a == "add_study") {
