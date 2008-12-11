@@ -973,7 +973,7 @@
         
       
       <div id="example" class="bm_5" style="border: 2px solid #ddd; background-color:#ddd; width: 100%;">
-            <div class="bold bm_2" style="font-size:10px; margin-left:2px;">EXAMPLE</div>
+            <div class="bold bm_2" style="font-size:10px; margin-left:2px; color:#555">EXAMPLE</div>
             
             <div id="example_1" style="background-color:#fff; height:30px; line-height:30px; text-align:center">1</div>
             <div id="example_2" style="background-color:#fff; height:30px; line-height:30px;">JTW-121783-4323</div>

@@ -331,6 +331,9 @@ height:100%;
   float:left;
 }
 
+#screen_table #example {
+  color:#666;
+}
 #screen_table #example_1 {
   border-right: 1px solid #ddd;
 }
