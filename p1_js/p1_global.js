@@ -208,6 +208,12 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	  
 	  
 	      if (icells_completed_in_row == icells_in_row) {
+	        for (var k=0; k < column_2.length; k++) {
+	          if ( document.getElementById('cell_2_' + i).value == column_2[0] ) {
+	            ajax_oktogo = false;
+	            poplog(document.getElementById('submit_subjects_button'),'top','ok', '2 or more subjects you are trying to add have the same subject ID. Check for duplicates and try again.');
+	          }
+	        }
 	        column_2.push( document.getElementById('cell_' + 2 + '_' + i).value );
 	        column_3.push( document.getElementById('cell_' + 3 + '_' + i).value );
 	        column_4.push( document.getElementById('cell_' + 4 + '_' + i).value );
