@@ -174,8 +174,8 @@
     <xsl:if test="not($num = 20)">
       
       <xsl:choose>
-        <xsl:when test="$num mod 2 != 0"><input id="cell_2_{$num}" class="cell_input cell_bg_b" type="text" row="{$num}"/></xsl:when>
-        <xsl:otherwise><input id="cell_2_{$num}" class="cell_input" type="text" row="{$num}"/></xsl:otherwise>
+        <xsl:when test="$num mod 2 != 0"><input id="cell_2_{$num}" class="cell_input cell_bg_b" type="text" onkeyup="check_completion(this);"/></xsl:when>
+        <xsl:otherwise><input id="cell_2_{$num}" class="cell_input" type="text" onkeyup="check_completion(this);"/></xsl:otherwise>
       </xsl:choose>
       
       <xsl:call-template name="add_col_2">
@@ -225,8 +225,8 @@
     <xsl:if test="not($num = $row_quantity + 1)">
       
     
-        <a id="cell_5_{$num}" class="hover" href="javascript:;" style="text-align:center; height:28px; padding:2px 0 0 0; text-decoration:none; display: block;">
-          <img my_name="img" src="../p1_gfx/circle.png"/>
+        <a id="cell_5_{$num}" class="" href="javascript:;" onclick="switch_symbol(this);" style="cursor:default; text-align:center; height:28px; padding:2px 0 0 0; text-decoration:none; display: block;">
+          <img my_name="img" src=""/>
         </a>
         
         

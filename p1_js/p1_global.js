@@ -508,6 +508,36 @@ function new_row() {
   document.getElementById( 'table_box' ).style.height = document.getElementById( 'table_box' ).offsetHeight + 30 + 'px';
 }
 
-function test() {
-  alert(form_array);
+//*********************************************************
+// Add Subject(s)
+//*********************************************************
+
+function get_symbol( who ) {
+  var path_array = getNamedChildren( who, 'img' )[0].src.split( '/' );
+  var file_array = path_array[ path_array.length - 1 ].split( '.' );
+  var symbol = file_array[ file_array.length - 2 ];
+  
+  return symbol;
+}
+function switch_symbol( who ) {
+  var path_array = getNamedChildren( who, 'img' )[0].src.split( '/' );
+  var file_array = path_array[ path_array.length - 1 ].split( '.' );
+  var symbol = file_array[ file_array.length - 2 ];
+  if ( symbol == 'circle' ) {
+    getNamedChildren( who, 'img' )[0].src = '../p1_gfx/check.png';
+  }
+}
+
+function check_completion( who ) {
+  var id_array = who.getAttribute( 'id' ).split( '_' );
+  var row_number = id_array[2];
+  
+  if ( document.getElementById('cell_' + 2 + '_' + row_number).value.replace(/\s+/g,'').length > 0 ||
+       document.getElementById('cell_' + 3 + '_' + row_number).value.replace(/\s+/g,'').length > 0 ||
+       document.getElementById('cell_' + 4 + '_' + row_number).value.replace(/\s+/g,'').length > 0 ) {
+    
+     getNamedChildren( 'cell_5_' + row_number, 'img' )[0].src = '../p1_gfx/circle.png';
+     document.getElementById('cell_5_' + row_number).class = 'hover';
+     document.getElementById('cell_5_' + row_number).style.cursor = 'pointer';
+  }
 }
