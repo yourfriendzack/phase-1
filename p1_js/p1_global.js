@@ -536,6 +536,11 @@ function check_completion( who ) {
     
      getNamedChildren( 'cell_5_' + row_number, 'img' )[0].src = '../p1_gfx/circle.png';
      document.getElementById('cell_5_' + row_number).class = 'hover';
-     document.getElementById('cell_5_' + row_number).style.cursor = 'pointer';
+     document.getElementById('cell_5_' + row_number).style.cursor = 'auto';
+  }
+  else {
+    getNamedChildren( 'cell_5_' + row_number, 'img' )[0].src = '';
+    document.getElementById('cell_5_' + row_number).class = '';
+    document.getElementById('cell_5_' + row_number).style.cursor = 'default';
   }
 }
