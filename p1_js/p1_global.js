@@ -202,7 +202,7 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	           }
 	         }  
 	       }
-	       if (getNamedChildren( 'cell_' + 5 + '_' + i, 'img' )[0].src == '../p1_gfx/check.png' ) {
+	       if ( get_symbol( 'cell_5_' + i )  == 'check' ) {
 	              icells_completed_in_row = icells_completed_in_row + 1;
 	       }
 	  
@@ -520,9 +520,7 @@ function get_symbol( who ) {
   return symbol;
 }
 function switch_symbol( who ) {
-  var path_array = getNamedChildren( who, 'img' )[0].src.split( '/' );
-  var file_array = path_array[ path_array.length - 1 ].split( '.' );
-  var symbol = file_array[ file_array.length - 2 ];
+  var symbol = get_symbol( who );
   if ( symbol == 'circle' ) {
     getNamedChildren( who, 'img' )[0].src = '../p1_gfx/check.png';
   }
