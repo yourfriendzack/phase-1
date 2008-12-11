@@ -191,8 +191,8 @@
     <xsl:if test="not($num = 20)">
       
       <xsl:choose>
-        <xsl:when test="$num mod 2 != 0"><input id="cell_3_{$num}" class="cell_input cell_bg_b" type="text" row="{$num}"/></xsl:when>
-        <xsl:otherwise><input id="cell_3_{$num}" class="cell_input cell_bg_a" type="text" row="{$num}"/></xsl:otherwise>
+        <xsl:when test="$num mod 2 != 0"><input id="cell_3_{$num}" class="cell_input cell_bg_b" type="text" onkeyup="check_completion(this);"/></xsl:when>
+        <xsl:otherwise><input id="cell_3_{$num}" class="cell_input cell_bg_a" type="text" onkeyup="check_completion(this);"/></xsl:otherwise>
       </xsl:choose>
       
       <xsl:call-template name="add_col_3">
@@ -208,8 +208,8 @@
     <xsl:if test="not($num = 20)">
       
       <xsl:choose>
-        <xsl:when test="$num mod 2 != 0"><input id="cell_4_{$num}" class="cell_input cell_bg_b" type="text" row="{$num}"/></xsl:when>
-        <xsl:otherwise><input id="cell_4_{$num}" class="cell_input" type="text" row="{$num}"/></xsl:otherwise>
+        <xsl:when test="$num mod 2 != 0"><input id="cell_4_{$num}" class="cell_input cell_bg_b" type="text" onkeyup="check_completion(this);"/></xsl:when>
+        <xsl:otherwise><input id="cell_4_{$num}" class="cell_input" type="text" onkeyup="check_completion(this);"/></xsl:otherwise>
       </xsl:choose>
       
       <xsl:call-template name="add_col_4">
