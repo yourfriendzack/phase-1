@@ -220,6 +220,8 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
 	    
 	    
 	    var url = url + "&subject_id=" + js_array_to_php_array( column_2 );
+	    var url = url + "&outpatient_date=" + js_array_to_php_array( column_3 );
+	    var url = url + "&washout=" + js_array_to_php_array( column_4 );
 	    if (uncompleted_rows.length > 0) {
 	      ajax_oktogo = false;
 	      poplog(document.getElementById('submit_subjects_button'),'top','ok', 'Some fields are not filled out correctly');
