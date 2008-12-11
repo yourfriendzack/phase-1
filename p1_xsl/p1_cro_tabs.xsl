@@ -952,25 +952,37 @@
       
       <div id="screen_table">
         <div class="table_head">
-        <div class="title_1" style="color:#fff">
-          a
-        </div>
-        <div class="title_2">
-           <div class="italic color_000" style="text-align:center;">Subject</div>
-        </div>
-        <div class="title_3">
-           <div class="italic color_000" style="text-align:center; color:#fff">a</div>
-        </div>
-        <div class="title_4">
-           <div class="italic color_000" style="text-align:center;">Eligible</div>
-        </div>
+          <div class="title_1" style="color:#fff">
+            a
+          </div>
+          <div class="title_2">
+            <div class="italic color_000" style="text-align:center;">Subject</div>
+          </div>
+          <div class="title_3">
+             <div class="italic color_000" style="text-align:center; color:#fff">a</div>
+          </div>
+          <div class="title_4">
+            <div class="italic color_000" style="text-align:center;">Eligible</div>
+          </div>
           
           <div class="clear"/>
           
+          
+        
         </div>
         
       
-      
+      <div id="example" class="bm_5" style="border: 2px solid #ddd; background-color:#ddd; width: 100%;">
+            <div class="bold bm_2" style="font-size:10px; margin-left:2px;">EXAMPLE</div>
+            
+            <div id="example_1" style="background-color:#fff; height:30px; line-height:30px; text-align:center">1</div>
+            <div id="example_2" style="background-color:#fff; height:30px; line-height:30px;">JTW-121783-4323</div>
+            <div id="example_3" style="background-color:#fff; height:30px;"></div>
+            <div id="example_4" style="background-color:#fff; height:30px; line-height:30px;"></div>
+            
+            <div class="clear"/>
+      </div>
+        
       <div class="table_body">
         
         <div id="column_1">
