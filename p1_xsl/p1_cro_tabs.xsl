@@ -72,46 +72,74 @@
     <div id="sub_column_2">
       <div id="table_data" class="nodisp" row_quantity="{$row_quantity}"/>
       
-      <div id="tc_1_title" style="color:#fff; border:none;">
-        aa
-      </div>
-      <div id="tc_2_title" style="border:none;">
-          <div class="italic color_000" style="text-align:center;">Subject</div>
-      </div>
-      <div id="tc_3_title" style="border:none;">
-          <div class="italic color_000" style="text-align:center;">Out-Patient Date</div>
-      </div>
-      <div id="tc_4_title" style="border:none;">
-          <div class="italic color_000" style="text-align:center;">Washout</div>
-      </div>
+      <div id="add_table">
+        <div class="table_head">
+          <div class="title_1" style="color:#fff">
+            a
+          </div>
+          <div class="title_2">
+            <div class="italic color_000" style="text-align:center;">Subject ID</div>
+          </div>
+          <div class="title_3">
+             <div class="italic color_000" style="text-align:center;">Out-Patient Date</div>
+          </div>
+          <div class="title_4">
+            <div class="italic color_000" style="text-align:center;">Washout Duration</div>
+          </div>
+          <div class="title_5">
+            <div class="italic color_fff" style="text-align:center;">a</div>
+          </div>
+          
+          <div class="clear"/>
+          
+          
+        
+        </div>
+        
       
-      <div class="clear"/>
-      
-      <div id="table_box">
-        <div id="table_column_1">
+      <div id="example" class="bm_5" style="border: 2px solid #ddd; background-color:#ddd; width: 100%;">
+            <div class="bold bm_2" style="font-size:10px; margin-left:2px; color:#444">EXAMPLE</div>
+            
+            <div id="example_1" style="background-color:#fff; height:30px; line-height:30px; text-align:center">1</div>
+            <div id="example_2" style="background-color:#fff; height:30px; line-height:30px;">JTW-121783-4323</div>
+            <div id="example_3" style="background-color:#fff; height:30px;"></div>
+            <div id="example_4" style="background-color:#fff; height:30px; line-height:30px;"></div>
+            <div id="example_5" style="background-color:#fff; height:30px; line-height:30px;"></div>
+            
+            <div class="clear"/>
+      </div>
+        
+      <div class="table_body">
+        
+        <div id="column_1">
           
-          <xsl:call-template name="recurse_till_ten"/>
-          
-        </div>
-        <div id="table_column_2">
-          
-          <xsl:call-template name="table_column_2"/>
-          
-        </div>
-        <div id="table_column_3">
-          
-          <xsl:call-template name="table_column_3"/>
-          
-        </div>
-        <div id="table_column_4">
-          
-          <xsl:call-template name="table_column_4"/>
+          <xsl:call-template name="add_col_1"/>
           
         </div>
-        <div id="table_column_5">
-           
-          <xsl:call-template name="table_column_5"/>
+        <div id="column_2">
           
+          <xsl:call-template name="add_col_2"/>
+          
+        </div>
+        <div id="column_3">
+          
+          <xsl:call-template name="add_col_3"/>
+          
+        </div>
+        <div id="column_4">
+          
+          <xsl:call-template name="add_col_4"/>
+          
+        </div>
+        <div id="column_5">
+          
+          <xsl:call-template name="add_col_5"/>
+          
+        </div>
+        
+        
+          <div class="clear"/>
+        
         </div>
         
       </div>
@@ -123,7 +151,7 @@
   <div class="clear"/>
   </xsl:template>
   
-  <xsl:template name="recurse_till_ten">
+  <xsl:template name="add_col_1">
     <xsl:param name="num">1</xsl:param> <!-- param has initial value of 1 -->
     <xsl:if test="not($num = $row_quantity + 1)">
       
@@ -133,7 +161,7 @@
         <xsl:otherwise><div id="column_1_{$num}" class="cell_text" oninit="new_row_array(this)" row_quantity="{number($row_quantity) - 1}"><xsl:value-of select="$num"/></div></xsl:otherwise>
       </xsl:choose>
       
-      <xsl:call-template name="recurse_till_ten">
+      <xsl:call-template name="add_col_1">
         <xsl:with-param name="num">
           <xsl:value-of select="$num + 1"/>
         </xsl:with-param>
@@ -141,7 +169,7 @@
     </xsl:if>
   </xsl:template>
   
-  <xsl:template name="table_column_2">
+  <xsl:template name="add_col_2">
     <xsl:param name="num">1</xsl:param> <!-- param has initial value of 1 -->
     <xsl:if test="not($num = 20)">
       
@@ -150,7 +178,7 @@
         <xsl:otherwise><input id="column_2_{$num}" class="cell_input" type="text" row="{$num}"/></xsl:otherwise>
       </xsl:choose>
       
-      <xsl:call-template name="table_column_2">
+      <xsl:call-template name="add_col_2">
         <xsl:with-param name="num">
           <xsl:value-of select="$num + 1"/>
         </xsl:with-param>
@@ -158,7 +186,7 @@
     </xsl:if>
   </xsl:template>
   
-  <xsl:template name="table_column_3">
+  <xsl:template name="add_col_3">
     <xsl:param name="num">1</xsl:param> <!-- param has initial value of 1 -->
     <xsl:if test="not($num = 20)">
       
@@ -167,7 +195,7 @@
         <xsl:otherwise><input id="column_3_{$num}" class="cell_input cell_bg_a" type="text" row="{$num}"/></xsl:otherwise>
       </xsl:choose>
       
-      <xsl:call-template name="table_column_3">
+      <xsl:call-template name="add_col_3">
         <xsl:with-param name="num">
           <xsl:value-of select="$num + 1"/>
         </xsl:with-param>
@@ -175,7 +203,7 @@
     </xsl:if>
   </xsl:template>
   
-  <xsl:template name="table_column_4">
+  <xsl:template name="add_col_4">
     <xsl:param name="num">1</xsl:param> <!-- param has initial value of 1 -->
     <xsl:if test="not($num = 20)">
       
@@ -184,7 +212,7 @@
         <xsl:otherwise><input id="column_4_{$num}" class="cell_input" type="text" row="{$num}"/></xsl:otherwise>
       </xsl:choose>
       
-      <xsl:call-template name="table_column_4">
+      <xsl:call-template name="add_col_4">
         <xsl:with-param name="num">
           <xsl:value-of select="$num + 1"/>
         </xsl:with-param>
@@ -192,7 +220,7 @@
     </xsl:if>
   </xsl:template>
   
-  <xsl:template name="table_column_5">
+  <xsl:template name="add_col_5">
     <xsl:param name="num">1</xsl:param> <!-- param has initial value of 1 -->
     <xsl:if test="not($num = $row_quantity + 1)">
       
@@ -204,7 +232,7 @@
         
       </div>
       
-      <xsl:call-template name="table_column_5">
+      <xsl:call-template name="add_col_5">
         <xsl:with-param name="num">
           <xsl:value-of select="$num + 1"/>
         </xsl:with-param>
