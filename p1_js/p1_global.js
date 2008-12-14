@@ -348,3 +348,205 @@ function my_submit(arg_a, arg_b, arg_c, arg_d, arg_e, arg_f, arg_g)
        ajax_object.send(null);
      }
 }
+
+//*********************************************************
+// Onload
+//*********************************************************
+
+function get_anchor() {
+  var anchor_value = self.document.location.hash.substring(1);
+  
+  if (anchor_value == 'close_true') { 
+    ctalk('Study succesfully removed.');
+    self.document.location.hash = '#null';
+  }
+}
+
+//*********************************************************
+// Util
+//*********************************************************
+
+function collectionToArray(collection) 
+	{ 
+	    var ary = []; 
+	    for(var i=0, len = collection.length; i < len; i++) 
+	    { 
+	        ary.push(collection[i]); 
+	    } 
+	    return ary; 
+	}
+
+function isString(o) {return 'string' == typeof o;}
+
+function getNamedChildren(what_parent, child_name) {
+  var named_children = [];
+  if ( isString(what_parent) ) {
+    var childNodeArray = collectionToArray( document.getElementById(what_parent).childNodes );
+  }
+  else {
+    var childNodeArray = collectionToArray( what_parent.childNodes );
+  }
+ // alert(childNodeArray[0].tagName + ' ' + isText( childNodeArray[0] ));
+  for (var i=0; i < childNodeArray.length; i++) {
+   // if (childNodeArray[i].hasAttribute('my_name') && childNodeArray[i].getAttribute('my_name') == child_name) {
+   if (String( childNodeArray[i].tagName ) !== 'undefined' && childNodeArray[i].getAttribute('my_name') == child_name) {
+       named_children.push(childNodeArray[i]);
+    }
+  }
+  return named_children;
+}
+
+
+
+function js_array_to_php_array (a) {
+    var a_php = "";
+    var total = 0;
+    for (var key in a)
+    {
+        ++ total;
+        a_php = a_php + "s:" +
+                String(key).length + ":\"" + String(key) + "\";s:" +
+                String(a[key]).length + ":\"" + String(a[key]) + "\";";
+    }
+    a_php = "a:" + total + ":{" + a_php + "}";
+    return escape( a_php );
+}
+
+//*********************************************************
+// CTalk
+//********************************************************* 
+  
+var ctalk_array = new Array();
+
+function ctalk(arg_a) {
+  
+  var newdiv = document.createElement('div');
+  newdiv.setAttribute('class', 'ctalk_box popup_bg');
+  newdiv.setAttribute('id', 'yyy');
+  
+  newdiv.style.position = 'fixed';
+  
+  newdiv.innerHTML = 
+  "<div class='content'><div class='t'></div><div class='bm_2'></div>"+arg_a+"<div class='clear'></div></div><div class='b'><div></div></div>";
+
+  document.body.appendChild(newdiv);
+  ctalk_array.push(newdiv);
+  
+  var new_height = parseFloat(newdiv.offsetHeight);
+  newdiv.style.bottom = -new_height - 10 + 'px';
+  var myAnim = new YAHOO.util.Motion(newdiv, {points:  
+    { by: [0, -new_height - 10] }  
+    }, 0.5); 
+    
+    myAnim.animate();
+
+    for (var i=0; i < ctalk_array.length; i++) {
+      if (ctalk_array[i] !== newdiv && ctalk_array[i] !== null) {
+         var myAnim = new YAHOO.util.Motion(ctalk_array[i], {points:  
+         { by: [0, -new_height - 10] }  
+          }, 0.5); 
+    
+        myAnim.animate();
+        
+        var myFade = new YAHOO.util.Anim(ctalk_array[i], {  
+	      opacity: {to: 0}  
+	      }, 0.5); 
+	    
+	    myFade.onComplete.subscribe(removeElement); 
+	    myFade.animate();
+	    
+	    ctalk_array.splice(ctalk_array[i], 1, null);
+      }
+    }
+   
+}
+
+var removeElement = function() { 
+	   var el = this.getEl(); 
+	   el.parentNode.removeChild(el); 
+}
+
+//*********************************************************
+// Big Form
+//*********************************************************
+var form_array = [];
+
+function new_row_array(who) {
+  var row_array = [who];
+  form_array.push(row_array);
+}
+
+function new_cell(who) {
+//  form_array[Number(who.getAttribute('row')) - 1].push(who);
+}
+function new_row() {
+  var row_quantity = Number(document.getElementById( 'table_data' ).getAttribute('row_quantity'));
+  
+  if (row_quantity % 2 !== 0 ) {
+    var what_bg = 'cell_bg_a'
+  }
+  else {
+    var what_bg = 'cell_bg_b'
+  }
+  
+  var new_cell_1 = document.createElement('div');
+  new_cell_1.setAttribute('class', 'cell_text' + ' ' + what_bg);
+  new_cell_1.innerHTML = Number(document.getElementById( 'table_data' ).getAttribute('row_quantity')) + 1;
+  document.getElementById( 'table_data' ).setAttribute('row_quantity', Number(document.getElementById( 'table_data' ).getAttribute('row_quantity')) + 1);
+  
+  var new_cell_2 = document.createElement('input');
+  new_cell_2.setAttribute('class', 'cell_input' + ' ' + what_bg);
+  new_cell_2.setAttribute('type', 'text');
+  
+  var new_cell_3 = document.createElement('input');
+  new_cell_3.setAttribute('class', 'cell_input' + ' ' + what_bg);
+  new_cell_3.setAttribute('type', 'text');
+  
+  var new_cell_4 = document.createElement('input');
+  new_cell_4.setAttribute('class', 'cell_input' + ' ' + what_bg);
+  new_cell_4.setAttribute('type', 'text');
+  
+  document.getElementById( 'table_column_1' ).appendChild( new_cell_1 );
+  document.getElementById( 'table_column_2' ).appendChild( new_cell_2 );
+  document.getElementById( 'table_column_3' ).appendChild( new_cell_3 );
+  document.getElementById( 'table_column_4' ).appendChild( new_cell_4 );
+  
+  document.getElementById( 'table_box' ).style.height = document.getElementById( 'table_box' ).offsetHeight + 30 + 'px';
+}
+
+//*********************************************************
+// Add Subject(s)
+//*********************************************************
+
+function get_symbol( who ) {
+  var path_array = getNamedChildren( who, 'img' )[0].src.split( '/' );
+  var file_array = path_array[ path_array.length - 1 ].split( '.' );
+  var symbol = file_array[ file_array.length - 2 ];
+  
+  return symbol;
+}
+function switch_symbol( who ) {
+  var symbol = get_symbol( who );
+  if ( symbol == 'circle' ) {
+    getNamedChildren( who, 'img' )[0].src = '../p1_gfx/check.png';
+  }
+}
+
+function check_completion( who ) {
+  var id_array = who.getAttribute( 'id' ).split( '_' );
+  var row_number = id_array[2];
+  
+  if ( document.getElementById('cell_' + 2 + '_' + row_number).value.replace(/\s+/g,'').length > 0 ||
+       document.getElementById('cell_' + 3 + '_' + row_number).value.replace(/\s+/g,'').length > 0 ||
+       document.getElementById('cell_' + 4 + '_' + row_number).value.replace(/\s+/g,'').length > 0 ) {
+    
+     getNamedChildren( 'cell_5_' + row_number, 'img' )[0].src = '../p1_gfx/circle.png';
+     document.getElementById('cell_5_' + row_number).setAttribute( 'class', 'hover' );
+     document.getElementById('cell_5_' + row_number).style.cursor = 'pointer';
+  }
+  else {
+    getNamedChildren( 'cell_5_' + row_number, 'img' )[0].src = '';
+    document.getElementById('cell_5_' + row_number).setAttribute( 'class', '' );
+    document.getElementById('cell_5_' + row_number).style.cursor = 'default';
+  }
+}
