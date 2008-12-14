@@ -24,13 +24,13 @@
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/container/assets/skins/sam/container.css"/>
 
 <!-- Dependencies -->
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js"/>
 
 <!-- Source file -->
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/container/container-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/container/container-min.js"/>
 
 <!-- Source file --> 
-<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/animation/animation-min.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/animation/animation-min.js"/> 
 
   <script type="text/javascript" src="../p1_js/p1_global.js"/>
   <script type="text/javascript" src="../p1_js/php_utf8_encode.min.js"/>
