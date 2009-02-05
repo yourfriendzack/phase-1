@@ -6,7 +6,7 @@ body {
         padding:0;
         color:#333;
         font: normal 13px Helvetica Neue, arial, verdana, sans-serif;
-        background-color:#493c3c;
+        background-color:#fff;
 	z-index: -1;
         }
 
@@ -301,7 +301,7 @@ img
     margin:20px 0 2px 0;
     width:275px;
     height:88px;
-    background-image: url(../p1_gfx/logo.png);
+    background-image: url(../p1_gfx/p1_logo.png);
     background-repeat:no-repeat;
     }
     
