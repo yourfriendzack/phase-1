@@ -32,7 +32,8 @@ padding-bottom:5px;
   min-height:400px;
   padding:10px 10px 10px 10px;
   background-color:white;
-  border-top: 1px solid #333;
+  border: 1px solid #333;
+  border-top: 0px;
 }
 
 A:link {text-decoration: underline;
