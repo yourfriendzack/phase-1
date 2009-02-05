@@ -53,8 +53,6 @@
    
        
          
-         
-           <div id="subtitle">Welcome to Phase-1Check.com</div>
            
            <div id="login_panel">
          

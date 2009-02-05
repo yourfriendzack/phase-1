@@ -32,6 +32,7 @@ padding-bottom:5px;
   min-height:400px;
   padding:10px 10px 10px 10px;
   background-color:white;
+  border-top: 1px solid #333;
 }
 
 A:link {text-decoration: underline;
@@ -242,7 +243,8 @@ img
 #menu a.menu_link { display: inline; 
                     background-color:white;
                     text-decoration:none;
-                    border-left: 1px solid #493c3c;}
+                    border-top: 1px solid #333;
+                    border-left: 1px solid #333;}
 
 #menu a.menu_link:hover     { background-color:#ddd; }
 
