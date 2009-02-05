@@ -12,6 +12,9 @@
   color:#000;
   clear:both;
 }
+#logo {
+  margin:0 0 150px 0;
+}
 #login_panel {
   float:left;
   padding:3px 3px 3px 3px;
