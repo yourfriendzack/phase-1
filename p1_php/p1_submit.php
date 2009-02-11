@@ -8,7 +8,7 @@
 
    include("p1_config.php");
    require_once("MDB.php");
-   $var_submit = $_GET['location'];
+   $var_submit = mysql_real_escape_string($_GET['location']);
    session_start();
 
    $dsn = "mysql://$p1_db_user:$p1_password@$p1_host/$p1_database";
@@ -17,11 +17,11 @@
    switch($var_submit)
    {
       case "login":
-              $loginid = $_GET['login_id'];
-   	      $passwd = $_GET['password'];
+              $loginid = mysql_real_escape_string($_GET['login_id']);
+   	      $passwd = mysql_real_escape_string($_GET['password']);
    	      if(MDB::isError($db))
    	      {
-   		    $response = "false";
+   		    $response = "[false]";
    	      }else
    	      {
    		    if(isset($passwd))
@@ -35,7 +35,7 @@
                        $results = $db->fetchRow($res, MDB_FETCHMODE_ASSOC);
    		       if($num==0)
    		       {
-   		         $response="false";
+   		         $response="[false]";
    		       }else
    		       {
    		         $checkpass = $results['password'];
@@ -43,7 +43,7 @@
    		         $checkrole = $results['role'];
    		         if((!isset($checkrole))) 
    		         {
-   		           $response = "false" ;
+   		           $response = "[false]" ;
    		         }else
    		         {  
                             if($checkrole == 'admin')
@@ -55,7 +55,7 @@
                                   setcookie("user_role","$checkrole",time()+3600);
                                }else
    			       {
-   			          $response = "false";
+   			          $response = "[false]";
                                }
                             }else if($checkrole == 'cro')
                             {
@@ -68,24 +68,24 @@
                                 setcookie("u_role","$checkrole",time()+3600);                                
                               }else
                               {
-                                 $response = "false";
+                                 $response = "[false]";
                               }
                             }else
                             {
-                                $response="false";
+                                $response="[false]";
                             }
    		          }
    		      }
    		   }else
    		   {
-   		     $response = "false";
+   		     $response = "[false]";
    		   }
    	     }
    	     $db->disconnect();
      	break;
       case "remove_study":
-        $study_id = $_GET['study_id'];
-        $study_num = $_GET['study_number'];
+        $study_id = mysql_real_escape_string($_GET['study_id']);
+        $study_num = mysql_real_escape_string($_GET['study_number']);
         if(MDB::isError($db))
         {
            $response = "false";

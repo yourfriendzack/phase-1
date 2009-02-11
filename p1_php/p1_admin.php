@@ -13,9 +13,9 @@
   $db = MDB::connect($dsn);
   
   
-  $userid = $_COOKIE['user_id'];
-  $roleid = $_COOKIE['user_role'];
-  $secname = $_GET['section'];
+  $userid = mysql_real_escape_string($_COOKIE['user_id']);
+  $roleid = mysql_real_escape_string($_COOKIE['user_role']);
+  $secname = mysql_real_escape_string($_GET['section']);
   if(!isset($roleid))
   {
   	$xml = new DomDocument;

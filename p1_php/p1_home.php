@@ -3,7 +3,7 @@
 /* Name - Yogesh Mali
    Date - 25th September,2008 */
 
-   $var_section = $_GET['section'];
+   $var_section = mysql_real_escape_string($_GET['section']);
 
    $doc = new DomDocument('1.0');
    $root = $doc->createElement('root');
